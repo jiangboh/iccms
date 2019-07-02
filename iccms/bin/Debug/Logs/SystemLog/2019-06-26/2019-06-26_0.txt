@@ -1,0 +1,1414 @@
+
+============ 2019-06-26 09:04:08 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:08 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:11 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:18 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:18 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:21 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"437","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"28","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:04:25","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:27 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Request","dic":{"parentFullPathName":"设备.TDS测试","name":"TDS-Test","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:27 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Request","dic":{"parentFullPathName":"设备.TDS测试","name":"TDS-Test","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:27 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_req","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:27 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:27 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"18","domainParentId":"1","parentFullPathName":"设备.TDS测试","name":"TDS-Test","mode":"TD_SCDMA","primaryplmn":"46000","earfcndl":"10080","earfcnul":"10080","cellid":"1","pci":"127","tac":"22861","txpower":"0","periodtac":"0","manualfreq":"1","bootMode":"1","Bandoffset":"39,70000;40,-10000","NTP":"218.17.26.199","ntppri":"5","source":"0","ManualEnable":"0","ManualEarfcn":"0","ManualPci":"0","ManualBw":"0","gps_select":"0","otherplmn":"46009,46002","periodFreq":"0:10090,10055,9595,10080","time":"2019-06-25 17:13:40"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:27 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_req","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:27 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:27 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"18","domainParentId":"1","parentFullPathName":"设备.TDS测试","name":"TDS-Test","mode":"TD_SCDMA","primaryplmn":"46000","earfcndl":"10080","earfcnul":"10080","cellid":"1","pci":"127","tac":"22861","txpower":"0","periodtac":"0","manualfreq":"1","bootMode":"1","Bandoffset":"39,70000;40,-10000","NTP":"218.17.26.199","ntppri":"5","source":"0","ManualEnable":"0","ManualEarfcn":"0","ManualPci":"0","ManualBw":"0","gps_select":"0","otherplmn":"46009,46002","periodFreq":"0:10090,10055,9595,10080","time":"2019-06-25 17:13:40"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:27 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_response","dic":{"enable":"0","type":"0","messageFormat":"0","Period":"60","nameFormat":"%A_[%#I]_%04y_%02m_%02d_%02h_%02f_%02s.pns","dataFormat":"%E,%S,%04y-%02m-%02d %02h:%02f:%02s,%R,%.6J,%.6W,%O\\r\\n","URLorIP":"ftp://218.17.26.199/pub/imsiFtpUpload/","addInfo":"test:123456","commEnable":"1","commIp":"172.17.1.103","commPort":"14787","encryptType":"3","cacheMax":"0"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:27 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn_response","dic":{"earfcnlist":"9437,9445,9476,9455","timestamp":"2019-06-26 01:04:31"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:28 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_response","dic":{"enable":"0","type":"0","messageFormat":"0","Period":"60","nameFormat":"%A_[%#I]_%04y_%02m_%02d_%02h_%02f_%02s.pns","dataFormat":"%E,%S,%04y-%02m-%02d %02h:%02f:%02s,%R,%.6J,%.6W,%O\\r\\n","URLorIP":"ftp://218.17.26.199/pub/imsiFtpUpload/","addInfo":"test:123456","commEnable":"1","commIp":"172.17.1.103","commPort":"14787","encryptType":"3","cacheMax":"0"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:28 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn_response","dic":{"earfcnlist":"9437,9445,9476,9455","timestamp":"2019-06-26 01:04:32"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:28 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:28 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:31 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:04:31 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:04:31 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:31 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:04:30"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:04:38 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:38 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:41 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:48 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:48 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:51 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:58 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:04:58 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:01 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:08 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:08 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:11 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:18 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_parameter_request","dic":{"paramName":"CFG_CONTROLLER_REPORT_DISABLE","paramValue":"0"},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:05:18 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:18 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:19 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_param_response","dic":{"paramName":"CFG_CONTROLLER_REPORT_DISABLE","rebootflag":"0","result":"0","timestamp":"2019-06-26 01:05:23"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:05:21 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:05:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:05:21 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:05:20"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:05:28 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:28 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:31 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:38 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:38 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:41 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:48 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:48 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:51 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:58 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:05:59 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:01 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:08 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:08 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:11 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:06:11 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:06:11 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:11 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:06:10"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:06:18 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:18 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:21 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:28 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:29 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:31 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:38 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:39 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:41 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:48 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:49 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:51 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:57 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_parameter_request","dic":{"paramName":"CFG_GPS_MODE","paramValue":"1"},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:06:57 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_param_response","dic":{"paramName":"CFG_GPS_MODEER_REPORT_DISABLE","rebootflag":"2","result":"0","timestamp":"2019-06-26 01:07:01"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:06:58 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:06:59 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:07:01 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:07:01 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:07:01 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:07:01 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:07:00"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:07:05 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_parameter_request","dic":{"paramName":"CFG_GPS_MODE","paramValue":"1"},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:07:05 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_param_response","dic":{"paramName":"CFG_GPS_MODEER_REPORT_DISABLE","rebootflag":"2","result":"0","timestamp":"2019-06-26 01:07:09"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:07:08 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:07:09 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:07:11 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:07:16 ============
+Tcp Client 172.17.1.116:2379 To TCP server 172.17.1.103:14789 has disconnected.
+
+============ 2019-06-26 09:12:17 ============
+Tcp Client 172.17.1.116:2456 To TCP server 172.17.1.103:14789 has connected.
+
+============ 2019-06-26 09:12:18 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_login_request","dic":{"UserName":"engi","PassWord":"engi","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:19 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"445","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"37","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:12:22","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:19 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_login_response","dic":{"ReturnCode":0,"ReturnStr":"成功","GroupName":"RoleEng","DomainList":"","FunList":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:20 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:12:20 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:20 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_privilege_request","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:20 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_role_request","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:20 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_usr_group_request","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:20 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_group_privilege_request","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:20 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:12:19"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:20 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_privilege_response","dic":{"ReturnCode":0,"ReturnStr":"成功","PrivilegeCount":"51"},"n_dic":[{"name":"1","dic":{"priId":"1","funName":"所有","aliasName":"-1","des":"0"}},{"name":"2","dic":{"priId":"2","funName":"功能","aliasName":"所有","des":"0"}},{"name":"3","dic":{"priId":"3","funName":"设置","aliasName":"所有","des":"0"}},{"name":"4","dic":{"priId":"4","funName":"显示","aliasName":"所有","des":"0"}},{"name":"5","dic":{"priId":"5","funName":"设备管理","aliasName":"功能","des":"0"}},{"name":"6","dic":{"priId":"6","funName":"特殊名单管理","aliasName":"功能","des":"0"}},{"name":"7","dic":{"priId":"7","funName":"历史记录管理","aliasName":"功能","des":"0"}},{"name":"8","dic":{"priId":"8","funName":"系统日志管理","aliasName":"功能","des":"0"}},{"name":"9","dic":{"priId":"9","funName":"用户管理","aliasName":"设置","des":"0"}},{"name":"10","dic":{"priId":"10","funName":"域管理","aliasName":"设置","des":"0"}},{"name":"11","dic":{"priId":"11","funName":"系统管理","aliasName":"设置","des":"0"}},{"name":"12","dic":{"priId":"12","funName":"高级管理","aliasName":"设置","des":"0"}},{"name":"13","dic":{"priId":"13","funName":"选项...","aliasName":"设置","des":"0"}},{"name":"14","dic":{"priId":"14","funName":"捕号窗口","aliasName":"显示","des":"0"}},{"name":"15","dic":{"priId":"15","funName":"黑名单窗口","aliasName":"显示","des":"0"}},{"name":"16","dic":{"priId":"16","funName":"状态窗口","aliasName":"显示","des":"0"}},{"name":"17","dic":{"priId":"17","funName":"默认窗口","aliasName":"显示","des":"0"}},{"name":"18","dic":{"priId":"18","funName":"未知设备提示器","aliasName":"显示","des":"0"}},{"name":"19","dic":{"priId":"19","funName":"系统状态监控器","aliasName":"显示","des":"0"}},{"name":"20","dic":{"priId":"20","funName":"账号设置","aliasName":"用户管理","des":"0"}},{"name":"21","dic":{"priId":"21","funName":"用户组设置","aliasName":"用户管理","des":"0"}},{"name":"22","dic":{"priId":"22","funName":"密码修改","aliasName":"系统管理","des":"0"}},{"name":"23","dic":{"priId":"23","funName":"本地设置","aliasName":"系统管理","des":"0"}},{"name":"24","dic":{"priId":"24","funName":"后台设置","aliasName":"高级管理","des":"0"}},{"name":"25","dic":{"priId":"25","funName":"配置导入导出","aliasName":"高级管理","des":"0"}},{"name":"26","dic":{"priId":"26","funName":"黑名单","aliasName":"特殊名单管理","des":"0"}},{"name":"27","dic":{"priId":"27","funName":"白名单","aliasName":"特殊名单管理","des":"0"}},{"name":"28","dic":{"priId":"28","funName":"普通用户","aliasName":"特殊名单管理","des":"0"}},{"name":"29","dic":{"priId":"29","funName":"重定向设置","aliasName":"特殊名单管理","des":"0"}},{"name":"30","dic":{"priId":"30","funName":"设备信息","aliasName":"设备管理","des":"0"}},{"name":"31","dic":{"priId":"31","funName":"小区信息","aliasName":"设备管理","des":"0"}},{"name":"32","dic":{"priId":"32","funName":"高级设置","aliasName":"设备管理","des":"0"}},{"name":"33","dic":{"priId":"33","funName":"系统维护","aliasName":"设备管理","des":"0"}},{"name":"34","dic":{"priId":"34","funName":"工程设置","aliasName":"设备管理","des":"0"}},{"name":"35","dic":{"priId":"35","funName":"非XML设置","aliasName":"设备管理","des":"0"}},{"name":"36","dic":{"priId":"36","funName":"邻小区信息","aliasName":"设备管理","des":"0"}},{"name":"37","dic":{"priId":"37","funName":"IMSI设置","aliasName":"设备管理","des":"0"}},{"name":"38","dic":{"priId":"38","funName":"短信息设置","aliasName":"设备管理","des":"0"}},{"name":"39","dic":{"priId":"39","funName":"通话记录","aliasName":"设备管理","des":"0"}},{"name":"40","dic":{"priId":"40","funName":"短信记录","aliasName":"设备管理","des":"0"}},{"name":"41","dic":{"priId":"41","funName":"时间段控制","aliasName":"高级设置","des":"0"}},{"name":"42","dic":{"priId":"42","funName":"其它设置","aliasName":"高级设置","des":"0"}},{"name":"43","dic":{"priId":"43","funName":"地图显示","aliasName":"显示","des":"0"}},{"name":"44","dic":{"priId":"44","funName":"统计分析","aliasName":"显示","des":"0"}},{"name":"45","dic":{"priId":"45","funName":"分时统计","aliasName":"统计分析","des":"0"}},{"name":"46","dic":{"priId":"46","funName":"常驻人口分析","aliasName":"统计分析","des":"0"}},{"name":"47","dic":{"priId":"47","funName":"碰撞分析","aliasName":"统计分析","des":"0"}},{"name":"48","dic":{"priId":"48","funName":"伴随分析","aliasName":"统计分析","des":"0"}},{"name":"49","dic":{"priId":"49","funName":"历史记录查询","aliasName":"历史记录管理","des":"0"}},{"name":"50","dic":{"priId":"50","funName":"通话记录查询","aliasName":"历史记录管理","des":"0"}},{"name":"51","dic":{"priId":"51","funName":"短信记录查询","aliasName":"历史记录管理","des":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:20 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_usr_group_response","dic":{"ReturnCode":0,"ReturnStr":"成功","UsrGroupCount":"3"},"n_dic":[{"name":"1","dic":{"usrName":"engi","roleName":"RoleEng","des":"engi->RoleEng(默认存在)"}},{"name":"2","dic":{"usrName":"root","roleName":"RoleSA","des":"root->RoleSA(默认存在)"}},{"name":"4","dic":{"usrName":"test","roleName":"test","des":"root"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:20 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_role_response","dic":{"ReturnCode":0,"ReturnStr":"成功","GroupCount":"7"},"n_dic":[{"name":"RoleEng","dic":{"name":"RoleEng","roleType":"Engineering","timeStart":"1970-01-01 00:00:00","timeEnd":"3000-01-01 00:00:00","des":"RoleEng(默认存在)"}},{"name":"RoleSA","dic":{"name":"RoleSA","roleType":"SuperAdmin","timeStart":"1970-01-01 00:00:00","timeEnd":"3000-01-01 00:00:00","des":"RoleSA(默认存在)"}},{"name":"RoleAdmin","dic":{"name":"RoleAdmin","roleType":"Administrator","timeStart":"1970-01-01 00:00:00","timeEnd":"3000-01-01 00:00:00","des":"RoleAdmin(默认存在)"}},{"name":"RoleSO","dic":{"name":"RoleSO","roleType":"SeniorOperator","timeStart":"1970-01-01 00:00:00","timeEnd":"3000-01-01 00:00:00","des":"RoleSO(默认存在)"}},{"name":"RoleOP","dic":{"name":"RoleOP","roleType":"Operator","timeStart":"1970-01-01 00:00:00","timeEnd":"3000-01-01 00:00:00","des":"RoleOP(默认存在)"}},{"name":"电围组","dic":{"name":"电围组","roleType":"Operator","timeStart":"1970-01-01 00:00:00","timeEnd":"3000-01-01 00:00:00","des":"null"}},{"name":"test","dic":{"name":"test","roleType":"SeniorOperator","timeStart":"2019-05-23 00:00:00","timeEnd":"2019-07-23 00:00:00","des":"null"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:20 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_group_privilege_response","dic":{"ReturnCode":0,"ReturnStr":"成功","GroupPriCount":"2"},"n_dic":[{"name":"电围组","dic":{"priIdSet":"30,31,41,42,32,33,35,36,37,5,8,2,20,9,10,22,23,11,24,25,12,13,3,18,19,4,1","des":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"}},{"name":"test","dic":{"priIdSet":"30,31,41,32,33,35,36,38,39,40,5,26,27,28,29,6,49,50,51,7,8,2,9,10,22,23,11,24,25,12,13,3,14,15,16,17,18,19,43,45,46,47,48,44,4,1","des":"0,0,1,0,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_domain_request","dic":{"AllNum":1},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_domain_response","dic":{"ReturnCode":0,"ReturnStr":"成功","NodeCount":"7"},"n_dic":[{"name":"设备","dic":{"id":"1","name":"设备","parentId":"-1","isStation":"0","des":"根节点(默认存在)"}},{"name":"设备.TDS测试","dic":{"id":"18","name":"TDS测试","parentId":"1","isStation":"1","des":"bie"}},{"name":"设备.梁非凡","dic":{"id":"19","name":"梁非凡","parentId":"1","isStation":"1","des":"bie"}},{"name":"设备.温州电围","dic":{"id":"20","name":"温州电围","parentId":"1","isStation":"1","des":"bie"}},{"name":"设备.深圳","dic":{"id":"21","name":"深圳","parentId":"1","isStation":"0","des":"bie"}},{"name":"设备.深圳.南山","dic":{"id":"22","name":"南山","parentId":"21","isStation":"0","des":"bie"}},{"name":"设备.深圳.南山.科技园","dic":{"id":"23","name":"科技园","parentId":"22","isStation":"1","des":"bie"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_request","dic":{"parentFullPathName":"设备.TDS测试","AllNum":2},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_request","dic":{"parentFullPathName":"设备.梁非凡","AllNum":2},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_request","dic":{"parentFullPathName":"设备.温州电围","AllNum":2},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_request","dic":{"parentFullPathName":"设备.深圳.南山.科技园","AllNum":2},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_response","dic":{"ReturnCode":0,"ReturnStr":"成功","DeviceCount":"1"},"n_dic":[{"name":"设备.TDS测试.TDS-Test","dic":{"sn":"HN12001152500500","ipAddr":"172.17.4.160","port":"52973","netmask":"","mode":"TD_SCDMA","online":"1","lastOnline":"2019-06-26 01:44:05","isActive":"1","innerType":"TD_SCDMA","apVersion":"3.1.0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_response","dic":{"ReturnCode":0,"ReturnStr":"成功","DeviceCount":"3"},"n_dic":[{"name":"设备.梁非凡.CDMA555","dic":{"sn":"","ipAddr":"","port":"0","netmask":"","mode":"CDMA","online":"0","lastOnline":"2019-05-13 14:29:52","isActive":"1","innerType":"","apVersion":""}},{"name":"设备.梁非凡.GSM","dic":{"sn":"EN90010118100042","ipAddr":"172.17.5.208","port":"39131","netmask":"","mode":"GSM_V2","online":"0","lastOnline":"2019-06-05 11:32:35","isActive":"1","innerType":"GSM_V2","apVersion":""}},{"name":"设备.梁非凡.升级功能验证","dic":{"sn":"EN1801S118100042","ipAddr":"172.17.5.208","port":"42321","netmask":"","mode":"LTE_TDD","online":"0","lastOnline":"2019-06-05 12:01:01","isActive":"1","innerType":"LTE_TDD","apVersion":"TIES_V3.1.4_20190123_Patch1_Release"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_response","dic":{"ReturnCode":0,"ReturnStr":"成功","DeviceCount":"4"},"n_dic":[{"name":"设备.温州电围.HJTGSM","dic":{"sn":"EN90010117440583","ipAddr":"172.17.100.155","port":"55083","netmask":"","mode":"GSM","online":"1","lastOnline":"2019-06-26 03:03:26","isActive":"1","innerType":"GSM","apVersion":""}},{"name":"设备.温州电围.电信B1","dic":{"sn":"","ipAddr":"","port":"0","netmask":"","mode":"LTE_FDD","online":"0","lastOnline":"2019-05-13 14:29:52","isActive":"1","innerType":"","apVersion":""}},{"name":"设备.温州电围.移动b40","dic":{"sn":"EN1801S117440583","ipAddr":"172.17.100.155","port":"59342","netmask":"","mode":"LTE_TDD","online":"0","lastOnline":"2019-06-10 14:40:33","isActive":"1","innerType":"LTE_TDD","apVersion":"TIES_V3.1.4_20190123_Patch1_Release"}},{"name":"设备.温州电围.联通B1","dic":{"sn":"","ipAddr":"","port":"0","netmask":"","mode":"LTE_FDD","online":"0","lastOnline":"2019-05-13 14:29:52","isActive":"1","innerType":"","apVersion":""}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_all_device_response","dic":{"ReturnCode":0,"ReturnStr":"成功","DeviceCount":"2"},"n_dic":[{"name":"设备.深圳.南山.科技园.FDD","dic":{"sn":"EN1801S118100042","ipAddr":"172.17.5.67","port":"39823","netmask":"","mode":"LTE_FDD","online":"1","lastOnline":"2019-06-26 03:41:05","isActive":"1","innerType":"LTE_TDD","apVersion":"FIES_V3.1.4_20181009_Gaochuang_Release"}},{"name":"设备.深圳.南山.科技园.短信设备","dic":{"sn":"EN90010118100042","ipAddr":"172.17.5.67","port":"40149","netmask":"","mode":"GSM_V2","online":"0","lastOnline":"2019-06-25 17:36:10","isActive":"1","innerType":"GSM_V2","apVersion":""}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.TDS测试","name":"TDS-Test","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"18","domainParentId":"1","parentFullPathName":"设备.TDS测试","name":"TDS-Test"},"n_dic":[{"name":"","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"1","SYNC":"0","LICENSE":"1","ALIGN":"1","RADIO":"1","time":"2019-06-26 01:44:24","wSelfStudy":"0","ApReadySt":"Cell-Ready","source":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.梁非凡","name":"CDMA555","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:21 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"19","domainParentId":"1","parentFullPathName":"设备.梁非凡","name":"CDMA555"},"n_dic":[{"name":"carry0","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"0","SYNC":"0","LICENSE":"0","ALIGN":"0","RADIO":"0","time":"2019-05-13 14:29:52"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:21 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.梁非凡","name":"升级功能验证","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:22 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"19","domainParentId":"1","parentFullPathName":"设备.梁非凡","name":"升级功能验证"},"n_dic":[{"name":"","dic":{"SCTP":"0","S1":"0","GPS":"1","CELL":"0","SYNC":"0","LICENSE":"1","ALIGN":"1","RADIO":"0","time":"2019-06-05 11:17:09","wSelfStudy":"0","ApReadySt":"Ready-For-Cell","source":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:22 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.温州电围","name":"电信B1","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:22 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"20","domainParentId":"1","parentFullPathName":"设备.温州电围","name":"电信B1"},"n_dic":[{"name":"","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"0","SYNC":"0","LICENSE":"0","ALIGN":"0","RADIO":"0","time":"2019-05-13 14:29:52","wSelfStudy":"0","ApReadySt":null,"source":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:22 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.温州电围","name":"移动b40","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:22 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"20","domainParentId":"1","parentFullPathName":"设备.温州电围","name":"移动b40"},"n_dic":[{"name":"","dic":{"SCTP":"0","S1":"0","GPS":"1","CELL":"0","SYNC":"0","LICENSE":"1","ALIGN":"1","RADIO":"0","time":"2019-06-10 14:39:21","wSelfStudy":"0","ApReadySt":"Ready-For-Cell","source":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:22 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.温州电围","name":"联通B1","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:22 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"20","domainParentId":"1","parentFullPathName":"设备.温州电围","name":"联通B1"},"n_dic":[{"name":"","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"0","SYNC":"0","LICENSE":"0","ALIGN":"0","RADIO":"0","time":"2019-05-13 14:29:52","wSelfStudy":"0","ApReadySt":null,"source":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:22 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.深圳.南山.科技园","name":"FDD","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:22 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"23","domainParentId":"22","parentFullPathName":"设备.深圳.南山.科技园","name":"FDD"},"n_dic":[{"name":"","dic":{"SCTP":"0","S1":"0","GPS":"1","CELL":"0","SYNC":"0","LICENSE":"1","ALIGN":"1","RADIO":"0","time":"2019-06-26 03:41:39","wSelfStudy":"0","ApReadySt":"Ready-For-Cell","source":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:22 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Request","dic":{"parentFullPathName":"设备.梁非凡","name":"GSM","carry":"0","AllNum":4},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Request","dic":{"parentFullPathName":"设备.梁非凡","name":"GSM","carry":"1","AllNum":4},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.梁非凡","name":"GSM","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Response","dic":{"ReturnCode":-1,"ReturnStr":"gsm_sys_para_record_get_by_devid出错：记录不存在"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Response","dic":{"ReturnCode":-1,"ReturnStr":"gsm_sys_para_record_get_by_devid出错：记录不存在"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"19","domainParentId":"1","parentFullPathName":"设备.梁非凡","name":"GSM"},"n_dic":[{"name":"carry0","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"1","SYNC":"0","LICENSE":"0","ALIGN":"1","RADIO":"1","time":"2019-06-05 11:27:08"}},{"name":"carry1","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"1","SYNC":"0","LICENSE":"0","ALIGN":"1","RADIO":"1","time":"2019-06-05 11:27:08"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Request","dic":{"parentFullPathName":"设备.温州电围","name":"HJTGSM","carry":"0","AllNum":4},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Request","dic":{"parentFullPathName":"设备.温州电围","name":"HJTGSM","carry":"1","AllNum":4},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.温州电围","name":"HJTGSM","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"20","domainParentId":"1","parentFullPathName":"设备.温州电围","name":"HJTGSM","carry":"0","paraMcc":"460","paraMnc":"0","paraBsic":"56","paraLac":"1","paraCellId":"10","paraC2":"59","paraPeri":"30","paraAccPwr":"5","paraMsPwr":"5","paraRejCau":"15","opLuSms":"0","opLuImei":"1","opCallEn":"0","opDebug":"0","opLuType":"2","opSmsType":"2","opRegModel":"0","rfEnable":"0","rfFreq":"75","rfPwr":"63"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"20","domainParentId":"1","parentFullPathName":"设备.温州电围","name":"HJTGSM","carry":"1","paraMcc":"460","paraMnc":"0","paraBsic":"56","paraLac":"1","paraCellId":"10","paraC2":"59","paraPeri":"30","paraAccPwr":"5","paraMsPwr":"5","paraRejCau":"15","opLuSms":"0","opLuImei":"1","opCallEn":"0","opDebug":"0","opLuType":"2","opSmsType":"2","opRegModel":"0","rfEnable":"0","rfFreq":"75","rfPwr":"63"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Request","dic":{"parentFullPathName":"设备.深圳.南山.科技园","name":"短信设备","carry":"0","AllNum":4},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Request","dic":{"parentFullPathName":"设备.深圳.南山.科技园","name":"短信设备","carry":"1","AllNum":4},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_request","dic":{"parentFullPathName":"设备.深圳.南山.科技园","name":"短信设备","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"20","domainParentId":"1","parentFullPathName":"设备.温州电围","name":"HJTGSM"},"n_dic":[{"name":"carry0","dic":{"RADIO":"0"}},{"name":"carry1","dic":{"RADIO":"0"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_ServerConfig_Request","dic":{"AllNum":1},"n_dic":null},"Version":"2.0.0"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Response","dic":{"ReturnCode":-1,"ReturnStr":"gsm_sys_para_record_get_by_devid出错：记录不存在"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:23 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GsmInfo_Response","dic":{"ReturnCode":-1,"ReturnStr":"gsm_sys_para_record_get_by_devid出错：记录不存在"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:24 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_device_detail_response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"23","domainParentId":"22","parentFullPathName":"设备.深圳.南山.科技园","name":"短信设备"},"n_dic":[{"name":"carry0","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"1","SYNC":"0","LICENSE":"0","ALIGN":"1","RADIO":"0","time":"2019-06-25 15:42:48"}},{"name":"carry1","dic":{"SCTP":"0","S1":"0","GPS":"0","CELL":"1","SYNC":"0","LICENSE":"0","ALIGN":"1","RADIO":"0","time":"2019-06-25 15:42:48"}}]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:24 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_ServerConfig_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","strDbIpAddr":"127.0.0.1","logOutputLevel":"0","strFtpIpAddr":"172.17.1.103","strFtpUserId":"ftpuser","strFtpUserPsw":"ftpuser","strLogUserId":"loguser","strLogUserPsw":"loguser","strFtpPort":"21","strFtpUpdateDir":"Update","strFtpApLogDir":"ApLog","strStartPortCDMA_ZYF":"14783","strStartPortGSM_ZYF":"14784","strStartPortGSM_HJT":"14785","strStartPortLTE":"14786","strStartPortTDS":"14787","strStartPortWCDMA":"14788","strStartPortAppWindows":"14789","strStartPortAppLinux":"14790","strStartPortAppAndroid":"14791","strStartPortAppThirdParty":"14792","dataAlignMode":"1","logMaxSize":"10","apFtpUploadEnable":"0","apFtpUploadNameFormat":"%A_[%#I]_%04y_%02m_%02d_%02h_%02f_%02s.pns","apFtpUploadDataFormat":"%E,%S,%U,%04y-%02m-%02d %02h:%02f:%02s,%R,%.6J,%.6W,%O\\r\\n","imsiThresholdValue":0.7},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:28 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Request","dic":{"parentFullPathName":"设备.TDS测试","name":"TDS-Test","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:28 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Request","dic":{"parentFullPathName":"设备.TDS测试","name":"TDS-Test","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:28 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_req","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:28 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:28 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"18","domainParentId":"1","parentFullPathName":"设备.TDS测试","name":"TDS-Test","mode":"TD_SCDMA","primaryplmn":"46000","earfcndl":"10080","earfcnul":"10080","cellid":"1","pci":"127","tac":"22861","txpower":"0","periodtac":"0","manualfreq":"1","bootMode":"1","Bandoffset":"39,70000;40,-10000","NTP":"218.17.26.199","ntppri":"5","source":"0","ManualEnable":"0","ManualEarfcn":"0","ManualPci":"0","ManualBw":"0","gps_select":"0","otherplmn":"46009,46002","periodFreq":"0:10090,10055,9595,10080","time":"2019-06-25 17:13:40"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:28 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_req","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:28 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn","dic":{},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:29 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_get_GenPara_Response","dic":{"ReturnCode":0,"ReturnStr":"成功","domainId":"18","domainParentId":"1","parentFullPathName":"设备.TDS测试","name":"TDS-Test","mode":"TD_SCDMA","primaryplmn":"46000","earfcndl":"10080","earfcnul":"10080","cellid":"1","pci":"127","tac":"22861","txpower":"0","periodtac":"0","manualfreq":"1","bootMode":"1","Bandoffset":"39,70000;40,-10000","NTP":"218.17.26.199","ntppri":"5","source":"0","ManualEnable":"0","ManualEarfcn":"0","ManualPci":"0","ManualBw":"0","gps_select":"0","otherplmn":"46009,46002","periodFreq":"0:10090,10055,9595,10080","time":"2019-06-25 17:13:40"},"n_dic":[]},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:29 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_response","dic":{"enable":"0","type":"0","messageFormat":"0","Period":"60","nameFormat":"%A_[%#I]_%04y_%02m_%02d_%02h_%02f_%02s.pns","dataFormat":"%E,%S,%04y-%02m-%02d %02h:%02f:%02s,%R,%.6J,%.6W,%O\\r\\n","URLorIP":"ftp://218.17.26.199/pub/imsiFtpUpload/","addInfo":"test:123456","commEnable":"1","commIp":"172.17.1.103","commPort":"14787","encryptType":"3","cacheMax":"0"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:29 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn_response","dic":{"earfcnlist":"9437,9445,9476,9455","timestamp":"2019-06-26 01:12:33"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:29 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_upload_response","dic":{"enable":"0","type":"0","messageFormat":"0","Period":"60","nameFormat":"%A_[%#I]_%04y_%02m_%02d_%02h_%02f_%02s.pns","dataFormat":"%E,%S,%04y-%02m-%02d %02h:%02f:%02s,%R,%.6J,%.6W,%O\\r\\n","URLorIP":"ftp://218.17.26.199/pub/imsiFtpUpload/","addInfo":"test:123456","commEnable":"1","commIp":"172.17.1.103","commPort":"14787","encryptType":"3","cacheMax":"0"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:29 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"get_son_earfcn_response","dic":{"earfcnlist":"9437,9445,9476,9455","timestamp":"2019-06-26 01:12:33"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:40 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_parameter_request","dic":{"paramName":"CFG_CONTROLLER_REPORT_DISABLE","paramValue":"0"},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:40 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_param_response","dic":{"paramName":"CFG_CONTROLLER_REPORT_DISABLE","rebootflag":"0","result":"0","timestamp":"2019-06-26 01:12:44"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:43 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_parameter_request","dic":{"paramName":"CFG_CONTROLLER_REPORT_DISABLE","paramValue":"0"},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:44 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_param_response","dic":{"paramName":"CFG_CONTROLLER_REPORT_DISABLE","rebootflag":"0","result":"0","timestamp":"2019-06-26 01:12:48"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:49 ============
+发送数据到服务器
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_parameter_request","dic":{"paramName":"CFG_GPS_MODE","paramValue":"1"},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:12:50 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"set_param_response","dic":{"paramName":"CFG_GPS_MODEER_REPORT_DISABLE","rebootflag":"2","result":"0","timestamp":"2019-06-26 01:12:54"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:12:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:12:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:09 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:13:09 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:13:10 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:13:09"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:13:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:13:59 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:14:00 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:14:00 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:13:59"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:14:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:49 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:14:50 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:14:50 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:14:49"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:14:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:14:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:16 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"446","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"38","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:15:20","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:15:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:35 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"447","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"37","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:15:39","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:15:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:39 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:15:40 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:15:40 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:15:39"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:15:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:54 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"448","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"37","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:15:58","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:15:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:15:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:13 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"449","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"37","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:16:17","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:16:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:29 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:16:30 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:16:30 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:16:29"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:16:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:16:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:19 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:17:20 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:17:20 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:17:19"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:17:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:17:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:09 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:18:10 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:18:10 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:18:09"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:18:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:18:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:00 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:19:00 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:19:00 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:18:59"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:19:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:15 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"450","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"38","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:19:19","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:19:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:34 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"451","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"37","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:19:38","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:19:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:49 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:19:50 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:19:50 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:19:49"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:19:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:53 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"452","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"38","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:19:57","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:19:57 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:19:57 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:00 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:07 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:07 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:10 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:12 ============
+接收到服务端数据
+{"ApInfo":{"SN":"HN12001152500500","Fullname":"设备.TDS测试.TDS-Test","IP":"172.17.4.160","Port":52973,"Type":"TD_SCDMA"},"Body":{"type":"scanner","dic":{"id":"453","userType":"1","imsi":"460000000000002","imei":"865400031197847","rsrp":"37","timeout":"10","sn":"HN12001152500500","timestamp":"2019-06-26 01:20:16","des":""},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:20:17 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:17 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:20 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:27 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:27 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:30 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:37 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:37 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:39 ============
+Heart Status (1) <==> NetWork Interface Connected(True)
+
+============ 2019-06-26 09:20:40 ============
+发送数据到服务器
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_request","dic":{"user":"engi","group":"RoleEng","AllNum":3},"n_dic":null},"Version":"1.0.0"}
+
+============ 2019-06-26 09:20:40 ============
+接收到服务端数据
+{"ApInfo":{"SN":"","Fullname":"","IP":"NULL_DEVICE","Port":0,"Type":""},"Body":{"type":"app_heartbeat_response","dic":{"timestamp":"2019-06-26 09:20:39"},"n_dic":null},"Version":"2.3.0.4965"}
+
+============ 2019-06-26 09:20:40 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:47 ============
+数据解析事务
+AnalysisDataThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:47 ============
+数据缓存事务
+StickDataPackageThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:50 ============
+心跳事务
+AppHeartThread is WaitSleepJoin！IsAlive[True]
+
+============ 2019-06-26 09:20:51 ============
+Tcp Client 172.17.1.116:2456 To TCP server 172.17.1.103:14789 has disconnected.
