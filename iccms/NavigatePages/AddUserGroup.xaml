@@ -1,0 +1,52 @@
+﻿<Window x:Class="iccms.NavigatePages.AddUserGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.NavigatePages"
+        mc:Ignorable="d"
+        Icon="..\icon\Safari.ico"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource WindowBrushSubDialog}"      
+        WindowState="Normal"
+        WindowStyle="None"
+        KeyDown="Window_KeyDown"      
+        MouseMove="Window_MouseMove"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="{Binding AddUserGroupTitle}"
+        Height="250" 
+        Width="300" 
+        ResizeMode="NoResize" 
+        Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox Style="{StaticResource GroupboxWithoutWhiteBorder}">
+            <Grid Margin="10,10,10,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="lblUserGroupName" Grid.Column="0" Grid.Row="0" Content="{Binding UserGroupName}" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtUserGroupName" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="30" Text="" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="150"/>
+                <Label x:Name="lblloreStartTime" Grid.Column="0" Grid.Row="1" Content="{Binding LoreStartTime}" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <DatePicker Name="dploreStartTime" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30" Width="150"/>
+                <Label x:Name="lblloreEndTime" Grid.Column="0" Grid.Row="2" Content="{Binding LoreEndTime}" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <DatePicker Name="dploreEndTime" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="30" Width="150"/>
+                <Label x:Name="lblInherit" Grid.Column="0" Grid.Row="3" Content="{Binding Inherit}" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbInherit" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30" Width="150" SelectedIndex="0" Style="{StaticResource ComboBoxStyle}">
+                    <ComboBoxItem Content="{Binding NoInherit}"/>
+                    <ComboBoxItem Content="{Binding AdvancedOperator}"/>
+                    <ComboBoxItem Content="{Binding OperatorGroup}"/>
+                </ComboBox>
+                <Button x:Name="btnAddGroupOK" Grid.Column="0" Grid.Row="4" Content="确定"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Height="30" Click="btnOK_Click"/>
+                <Button x:Name="btnAddGroupCancel" Grid.Column="1" Grid.Row="4" Content="取消" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Height="30" Click="btnCancel_Click"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

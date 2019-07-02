@@ -1,0 +1,108 @@
+﻿<Page x:Class="iccms.NavigatePages.DeviceInfoSettingModel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:iccms.NavigatePages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" 
+      d:DesignWidth="550"
+      FontSize="14"
+      Background="{x:Null}"
+      Title="DeviceInfoSettingModel" 
+      Loaded="Page_Loaded">
+
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrush}" BorderBrush="#FF05FF54" BorderThickness="1" CornerRadius="10,10,10,10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="lblDomainName" Content="{Binding DomainNameCaption}" HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" />
+                <TextBox x:Name="txtDomainName" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="0" Text="{Binding DomainFullPathName}" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+
+                <Label x:Name="lblSite" Content="{Binding StationCaption}" HorizontalAlignment="Right"  Grid.Column="0"  Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <TextBox x:Name="txtSite" Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="1" Text="{Binding Station}" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+
+                <Label x:Name="lblDeviceName" Grid.Column="3"  Grid.Row="1" Content="{Binding DeviceNameCaption}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <TextBox x:Name="txtDeviceName" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" Text="{Binding DeviceName}" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+
+                <Label x:Name="lblcbxMode"  Grid.Column="0"  Grid.Row="2" Content="{Binding ModeCaption}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <ComboBox x:Name="cbxMode" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Center" Text="{Binding DeviceMode}" VerticalContentAlignment="Center" Height="30"  Style="{StaticResource ComboBoxStyle}">
+                    <ComboBoxItem Content="LTE-FDD"/>
+                    <ComboBoxItem Content="LTE-TDD"/>
+                    <ComboBoxItem Content="WCDMA"/>
+                    <ComboBoxItem Content="CDMA"/>
+                    <ComboBoxItem Content="TD-SCDMA"/>
+                    <ComboBoxItem Content="GSM"/>
+                    <ComboBoxItem Content="GSM-V2"/>
+                </ComboBox>
+
+                <Label x:Name="lblSetIP" Grid.Column="0"  Grid.Row="3" Content="{Binding IpCaption}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+
+                <RadioButton GroupName="IPSetting" x:Name="rbFixedIP" Grid.Column="1" Grid.Row="3" Content="{Binding StticIPCaption}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="rbFixedIP_Click"/>
+
+                <TextBox x:Name="txtIPAddr" Grid.Column="2"  Grid.Row="3" Grid.ColumnSpan="2" Height="30" Text="{Binding IpAddr}" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label x:Name="lblPort" Grid.Row="3" Grid.Column="4" Content=":" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="txtPort" Grid.Column="4" Grid.Row="3" Height="30" Text="{Binding Port}" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="15 0 0 0"/>
+                <Grid Grid.Row="3" Grid.Column="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="38"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="lblNetMask" Grid.Row="0" Grid.Column="0" Content="掩码" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <TextBox x:Name="txtNetMask" Grid.Row="0" Grid.Column="1" Text="{Binding NetMask}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></TextBox>
+                </Grid>
+
+                <RadioButton GroupName="IPSetting" x:Name="rbDynamicIP" Grid.Column="1"  Grid.Row="4" Content="{Binding DynamicIPCaption}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="rbDynamicIP_Click"/>
+
+                <Label x:Name="lblSN" Content="{Binding SerialNumberCaption}" HorizontalAlignment="Right"  Grid.Column="0"  Grid.Row="5" VerticalAlignment="Center" Height="30"/>
+                <TextBox x:Name="txtSN" Grid.Column="1"  Grid.Row="5" Grid.ColumnSpan="3" Text="{Binding SN}" VerticalAlignment="Center" VerticalContentAlignment="Center" MaxLength="16" Height="30"/>
+
+                <Label x:Name="lblDeviceDistinguish" Content="{Binding DeviceDistinguishCaption}" HorizontalAlignment="Right"  Grid.Column="0"  Grid.Row="6" VerticalAlignment="Center" Height="30"/>
+                <ComboBox x:Name="cbxDeviceDistinguish" Grid.ColumnSpan="3" Grid.Row="6" Grid.Column="1" Height="30" Text="{Binding DeviceIdentificationMode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource ComboBoxStyle}">
+                    <ComboBoxItem Name="tmDeviceName" Content="设备全名"/>
+                    <ComboBoxItem Name="tmIPAddress" Content="IP"/>
+                    <ComboBoxItem Name="tmSerialNumber" Content="系列号"/>
+                </ComboBox>
+
+                <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnAdd" Grid.Column="0" Grid.Row="7" Content="{Binding Add}" Height="30" VerticalAlignment="Center" Width="75" Click="btnAdd_Click"/>
+                    <Button x:Name="btnDelete" Grid.Column="1" Grid.Row="7" Content="{Binding Delete}" Height="30" VerticalAlignment="Center" Width="75" Click="btnDelete_Click"/>
+                    <Button x:Name="btnUpdate" Grid.Column="2" Grid.Row="7" Content="{Binding Update}" Height="30" VerticalAlignment="Center" Width="75" Click="btnUpdate_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>

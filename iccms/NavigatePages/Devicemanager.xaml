@@ -1,0 +1,209 @@
+﻿<Window x:Class="iccms.NavigatePages.Device_manager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.NavigatePages"
+        mc:Ignorable="d"
+        Name="FrmDeviceAdvanceSetting"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding DeviceManagement}" 
+        Height="500" 
+        Width="750" 
+        FontSize="12" 
+        Background="{StaticResource WindowBrush}"    
+        AllowsTransparency="True"
+        WindowState="Normal"
+        WindowStyle="None"
+        Loaded="Window_Loaded">
+
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--设备列表-->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Frame Name="DeviceListFrm" NavigationUIVisibility="Hidden" MouseMove="DeviceListFrm_MouseMove"></Frame>
+            </Grid>
+
+            <!--高级设置选项卡-->
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TabControl x:Name="tabControlSeting" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Transparent" Visibility="Visible" MouseLeftButtonDown="tabControlSeting_MouseLeftButtonDown" MouseMove="tabControlSeting_MouseMove">
+
+                    <!--设备信息设置-->
+                    <TabItem Header="{Binding DeviceInfo}" Name="tmDeviceInfo">
+                        <Frame Name="DeviceInfoSettingFram" NavigationUIVisibility="Hidden"></Frame>
+                    </TabItem>
+                    <!--小区信息-->
+                    <TabItem Header="{Binding VillageInfo}" Name="tmVillageInfo">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="115*"/>
+                                <ColumnDefinition Width="65*"/>
+                                <ColumnDefinition Width="110*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="lblPLMN" Content="{Binding PLMN}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblFreqPoint" Content="{Binding FreqPoint}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblBandWidth" Content="{Binding BandWidth}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblPowerDown" Content="{Binding PowerDown}" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblFreqMethod" Content="{Binding FreqMethod}" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtPLMN" HorizontalAlignment="Left" Height="23" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" Text="46000" VerticalAlignment="Top" Width="110"/>
+                            <TextBox x:Name="txtFreqPoint" HorizontalAlignment="Left" Height="23"  Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="39400" VerticalAlignment="Top" Width="110"/>
+                            <ComboBox x:Name="cbxBandWidth" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Width="110" SelectedIndex="0">
+                                <TabItem Content="5M" Header="5M"/>
+                                <TabItem Content="10M" Header="10M"/>
+                                <TabItem Content="20M" Header="20M"/>
+                            </ComboBox>
+                            <TextBox x:Name="txtPowerDown" HorizontalAlignment="Left" Height="23" Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" VerticalAlignment="Top" Text="0" Width="90"/>
+                            <Label x:Name="lblDB" Content="dB" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.RowSpan="2"/>
+                            <ComboBox x:Name="cbxFreqMethod" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" Width="110" SelectedIndex="1">
+                                <TabItem Content="{Binding Automatic}" Header="{Binding Automatic}"/>
+                                <TabItem Content="{Binding Manual}" Header="{Binding Manual}"/>
+                            </ComboBox>
+                            <Label x:Name="lblOperatorName" Content="{Binding OperatorName}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblDisturbCode" Content="{Binding DisturbCode}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblTACorLAC" Content="{Binding TACorLAC}" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblCycle" Content="{Binding Cycle}" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblStartupMode" Content="{Binding StartupMode}" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtOperatorName" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="0" TextWrapping="Wrap" Text="中国移动" VerticalAlignment="Top" Width="100"/>
+                            <TextBox x:Name="txtDisturbCode" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="1" TextWrapping="Wrap" Text="211" VerticalAlignment="Top" Width="100"/>
+                            <TextBox x:Name="txtTACorLAC" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="100"/>
+                            <TextBox x:Name="txtCycle" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="3" TextWrapping="Wrap" Text="0" Width="85" VerticalAlignment="Top"/>
+                            <Label x:Name="lblSecond" Content="{Binding lblSecond}" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="25"/>
+                            <ComboBox x:Name="cbxStartupMode" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="4" VerticalAlignment="Top" Width="97" SelectedIndex="0">
+                                <TabItem Content="{Binding Automatic}" Header="{Binding Automatic}"/>
+                                <TabItem Content="{Binding Manual}" Header="{Binding Manual}"/>
+                            </ComboBox>
+                            <Button x:Name="btnVillageUpdate" Content="{Binding DeviceUpdate}" Grid.Column="2" Grid.Row="5"  Grid.ColumnSpan="2" Margin="0,20,0,0" HorizontalAlignment="Left" Height="30" Width="75"/>
+                        </Grid>
+                    </TabItem>
+                    <!--高级设置-->
+                    <TabItem Header="{Binding AdvancedSetting}" Name="tmAdvancedSetting">
+                        <Grid Background="#FFE5E5E5" Margin="0,5,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="70*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="36"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                                <RowDefinition Height="32"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="lblSweepFreqPoint" Content="{Binding SweepFreqPoint}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtSweepFreqPoint" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" TextWrapping="Wrap" Text="38400，39400"  Width="220"/>
+                            <Button x:Name="btnSweepFreqPointUpdate" Content="{Binding DeviceUpdate}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="25"/>
+                            <Separator VerticalAlignment="Bottom"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
+                            <Separator Margin="0,0,0,-25"  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5"/>
+                            <Separator VerticalAlignment="Bottom"  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="5"/>
+                            <Separator Margin="0,0,0,-25"  Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5"/>
+                            <Label x:Name="lblGPS" Content="{Binding GPS}"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblFreqOffsetSetting" Content="{Binding FreqOffsetSetting}" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtFreqOffsetSetting" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Text="38400，39400" Width="176"/>
+                            <Button x:Name="btnFreqUpdate" Content="{Binding DeviceUpdate}"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Grid.Row="3"  Width="60" Height="25"/>
+                            <Label x:Name="lblNTP" Content="{Binding NTP}" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Label x:Name="lblPriority" Content="{Binding Priority}" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Grid.Row="4"/>
+                            <TextBox x:Name="txtNTP" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="23" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="8.8.8.8" Width="68"/>
+                            <TextBox x:Name="txtPriority" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="9" Width="39"/>
+                            <Button x:Name="btnNTPUpdate" Content="{Binding DeviceUpdate}" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="4" Grid.Row="4" Width="60" Height="25"/>
+                            <Label x:Name="lblSynchroSource" Content="{Binding SynchroSource}" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0" Grid.Row="5"/>
+                            <Label x:Name="lblAppointVillage" Content="{Binding AppointVillage}" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0" Grid.Row="6"/>
+                            <TextBox x:Name="txtNum" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="6" TextWrapping="Wrap" Text="37900,1" VerticalAlignment="Top" Width="99" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btnUpdateSys" Content="{Binding DeviceUpdate}" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="1" Grid.Row="7" Width="60" Height="25"/>
+                            <Label x:Name="lblStartTime" Content="{Binding StartTime}" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0" Grid.Row="8"/>
+                            <TextBox x:Name="txtStartTime1From" HorizontalAlignment="Left" Height="23" Grid.Column="1" Grid.Row="8" Text="7:00" VerticalAlignment="Top" Width="69"/>
+                            <TextBox x:Name="txtStartTime1To" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="8" Text="12:00" VerticalAlignment="Top" Width="69" />
+                            <TextBox x:Name="txtStartTime2From" HorizontalAlignment="Left" Height="23" Grid.Column="1" Grid.Row="9" Text="0:00" VerticalAlignment="Top" Width="69" />
+                            <TextBox x:Name="txtStartTime2To" HorizontalAlignment="Left" Height="23" Grid.Column="3" Grid.Row="9" Text="0:00" VerticalAlignment="Top" Width="69" />
+                            <Label x:Name="label2" Content="—" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="8"/>
+                            <Label x:Name="label3" Content="—" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="9"/>
+                            <Grid HorizontalAlignment="Left" Height="19" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Width="132">
+                                <RadioButton x:Name="rbConfigure" Content="{Binding Configure}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <RadioButton x:Name="rbUnConfigure" Content="{Binding UnConfigure}"  Margin="71,0,0,0"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="55"/>
+                            </Grid>
+                            <Grid HorizontalAlignment="Left" Height="19" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Width="132" RenderTransformOrigin="0.57,1.789">
+                                <RadioButton x:Name="rbGPS" Content="{Binding RbGPS}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <RadioButton x:Name="rbEmptyMouth" Content="{Binding EmptyMouth}" Margin="71,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55"/>
+                            </Grid>
+                            <Grid HorizontalAlignment="Left" Height="19" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Width="132" RenderTransformOrigin="0.57,1.789">
+                                <RadioButton x:Name="rbYes" Content="{Binding RbYes}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <RadioButton x:Name="rbNo" Content="{Binding RbNo}" Margin="71,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55"/>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <!--系统维护-->
+                    <TabItem Header="{Binding SysSetting}" Name="SysSetting">
+                        <Grid  Background="#FFE5E5E5" Margin="0,5,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80*"/>
+                                <ColumnDefinition Width="220*"/>
+                                <ColumnDefinition Width="40*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblFile" Content="{Binding File}" HorizontalAlignment="Left" Margin="18,31,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.469,1.32"/>
+                            <TextBox x:Name="txtFile" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220"/>
+                            <Button x:Name="button4" Content="" Grid.Column="2" HorizontalAlignment="Left" Margin="4,34,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="-0.36,-2.316"/>
+                            <Button x:Name="btnUpdateFile" Content="{Binding UpdateFile}" Grid.Column="1" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
+                            <Separator Margin="-4,-80,-4,46" Grid.Column="0" Grid.ColumnSpan="3"/>
+                            <Label x:Name="lblLogFile" Content="{Binding LogFile}" HorizontalAlignment="Left" Margin="18,126,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.469,1.32" Grid.ColumnSpan="2"/>
+                            <TextBox x:Name="textBox3_Copy" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220"/>
+                            <Button x:Name="button4_Copy2" Content="" Grid.Column="2" HorizontalAlignment="Left" Margin="3,128,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="-0.36,-2.316"/>
+                            <Button x:Name="btnGetlog" Content="{Binding Getlog}" Grid.Column="1" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
+                        </Grid>
+                    </TabItem>
+                    <!--工程设置-->
+                    <TabItem Header="{Binding ProjectSet}" Name="ProjectSet">
+                        <Grid Background="#FFE5E5E5" Margin="0,5,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="110*"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblPragramName" Content="{Binding PragramName}" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Top" Margin="13,27,0,0"/>
+                            <Label x:Name="lblPragramValue" Content="{Binding PragramValue}" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Top" Margin="13,57,0,0"/>
+                            <TextBox x:Name="txtPragramName" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+                            <TextBox x:Name="txtPragramValue" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+                            <Button x:Name="btnUpdatePragram" Content="{Binding UpdatePragram}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="85" Height="25"/>
+                            <Separator Margin="-4,-80,0,46" Grid.Column="0" Grid.ColumnSpan="3"/>
+                            <Menu x:Name="menu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="168" VerticalAlignment="Top" Width="168" Background="White" Margin="37,153,0,0"/>
+                            <Button x:Name="btnSendInfo" Content="{Binding SendInfo}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="85" Height="25"/>
+
+                        </Grid>
+                    </TabItem>
+
+                </TabControl>
+                <Button Name="btnClose" Grid.Row="1" Grid.Column="2" Content="关闭" Height="30" Width="75" Click="btnClose_Click"></Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,107 @@
+﻿<Window x:Class="iccms.NavigatePages.SettingSym"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.NavigatePages"
+        mc:Ignorable="d"
+        Icon="..\icon\Safari.ico"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding SettingSymTitle}" 
+        Height="400"
+        Width="500" 
+        ResizeMode="NoResize"  
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowState="Normal"
+        Background="{x:Null}"
+        Loaded="Window_Loaded"
+        MouseMove="Window_MouseMove" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrush}" BorderBrush="#FF05FF54" BorderThickness="1" CornerRadius="10,10,10,10">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TabControl x:Name="tabControl" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Background="Transparent" Margin="5,5,5,5">
+                <TabItem x:Name="tiChangePWD" Header="{Binding PasswordModify}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblOriginalPassword" Grid.Row="1" Grid.Column="1" Content="{Binding OriginalPassword}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtOriginalPassword"  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+
+                        <Label x:Name="lblNewPassword"  Grid.Row="2" Grid.Column="1" Content="{Binding NewPassword}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                        <PasswordBox x:Name="txtNewPassword" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+
+                        <Label x:Name="lblReNewPassword" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Content="{Binding ReNewPassword}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                        <PasswordBox x:Name="txtReNewPassword"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" VerticalContentAlignment="Center"  Height="30"/>
+
+                        <Button x:Name="btnOK"  Grid.Row="4" Grid.Column="4" Content="{Binding SS_OK}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="75" Height="30" Click="btnOK_Click"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem x:Name="tiLocalSet" Header="{Binding LocalLocation}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblLOGLocation" Grid.Row="1" Grid.Column="1" Content="{Binding LOGLocation}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtLOGLocation" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                        <Button Name="btnLogPathBrower" Grid.Row="1" Grid.Column="6" Content="..." VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Width="35" Margin="5 0" Click="btnLogPathBrower_Click"></Button>
+
+                        <Label x:Name="lblDefaultLocation" Grid.Row="2" Grid.Column="1" Content="{Binding DefaultLocation}" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtDefaultLocation" Grid.Row="2"  Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                        <Button Name="btnSavePathBrower" Grid.Row="2" Grid.Column="6" Content="..." VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Width="35" Margin="5 0"></Button>
+
+                        <Button x:Name="btnUpdate"  Grid.Row="3" Grid.Column="4" Content="{Binding SS_Update}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="75" Height="30" Click="btnUpdate_Click"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button Name="btnExit" Grid.Row="1" Grid.Column="6" Content="关闭" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnExit_Click"/>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,209 @@
+﻿<Window x:Class="iccms.NavigatePages.UECallInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.NavigatePages"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        mc:Ignorable="d"
+        Icon="..\icon\Safari.ico"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource WindowBrush}"
+        Title="主叫信息" 
+        Height="500"
+        Width="1024" 
+        ResizeMode="NoResize"                
+        WindowState="Normal"
+        WindowStyle="None"
+        KeyDown="Window_KeyDown"      
+        MouseMove="Window_MouseMove"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Loaded="Window_Loaded" Activated="FrmHistoryDataTable_Activated">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <GroupBox x:Name="groupBox" Header="" BorderThickness="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="260"></ColumnDefinition>
+                        <ColumnDefinition Width="45"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="170"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lblFullName" Grid.Column="0" Grid.Row="0" Content="全名" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cbFullName" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="23" IsEditable="True" Style="{StaticResource ComboBoxStyle}"/>
+                    
+                    <Label x:Name="lblCallType" Grid.Column="2" Grid.Row="0" Content="主叫类型" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cbCallType" Grid.Column="3" Grid.Row="0" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="23" SelectedIndex="0" IsEditable="False" Style="{StaticResource ComboBoxStyle}">
+                        <ComboBoxItem Content="所有"/>
+                        <ComboBoxItem Content="呼叫号码"/>
+                        <ComboBoxItem Content="短消息PDU"/>
+                        <ComboBoxItem Content="寻呼测量"/>
+                    </ComboBox>
+                    
+                    <Label x:Name="lblIMSI" Grid.Column="4" Grid.Row="0" Content="IMSI" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtIMSI" Grid.Column="5" Grid.Row="0" HorizontalAlignment="Center" Height="23" Text="{x:Null}" VerticalAlignment="Center" Width="100"/>
+                    <Label x:Name="lblDataTime" Grid.Column="8" Grid.Row="0" Content="主叫日期" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <Grid Grid.Column="9" Grid.Row="0" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker x:Name="dploreStartTime" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" IsTodayHighlighted="True"/>
+                        <Border  Grid.Column="1" Height="25" BorderThickness="1" BorderBrush="Black" Background="{StaticResource WindowBrush}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="3"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="3"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Name="textbox_hour" BorderThickness="0" TextChanged="numtextboxchanged" SelectionChanged="textbox_hour_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="0"></TextBox>
+                                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">:</TextBlock>
+                                <TextBox Name="textbox_minute"  BorderThickness="0" TextChanged="numtextboxchanged" SelectionChanged="textbox_hour_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Grid.Column="2"></TextBox>
+                                <TextBlock Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">:</TextBlock>
+                                <TextBox Name="textbox_second"  BorderThickness="0" TextChanged="numtextboxchanged" SelectionChanged="textbox_hour_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Grid.Column="4"></TextBox>
+                                <Grid Grid.Column="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Button Name="button_up" Style="{Binding Null}" Click="button_up_Click" Grid.Row="0" FontSize="5">▲</Button>
+                                    <Button Name="button_down" Style="{Binding Null}" Click="button_down_Click" Grid.Row="1" FontSize="5">▼</Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Button x:Name="btnSelectData" Grid.Column="6" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="30" Click="btnSelectData_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="32"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="..\Icon\search.png" Width="24" Height="24" VerticalAlignment="Center"></Image>
+                                    <Label x:Name="lblSelect" Grid.Column="1" Content="过滤" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="1" Margin="2">
+            <GroupBox BorderThickness="0">
+                <DataGrid x:Name="dgHistoryTable" Width="Auto" Background="Transparent" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" VirtualizingStackPanel.VirtualizationMode="Recycling" VirtualizingStackPanel.IsVirtualizing ="True">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Height" Value="25" />
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="50" Binding="{Binding Path=ReportID}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordIMSI" Text="序号"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Width="200" Binding="{Binding Path=DomainFullPathName}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordFullName" Text="全名"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Width="80" Binding="{Binding Path=BOrmType}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordBOrmType" Text="主叫类型"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Width="120" Binding="{Binding Path=BUeId}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordBUeId" Text="IMSI"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Width="50" Binding="{Binding Path=CRSRP}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordCRSRP" Text="信号强度"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Width="50" Binding="{Binding Path=Carrier}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordCarrier" Text="载波"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Width="155" Binding="{Binding Path=DataTime}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordDataTime" Text="上报时间"></TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Name="txtGSMV2SMSRecordMessage" Text="主叫内容"></TextBlock>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Name="txtGSMV2SMSRecordMessage" Text="{Binding BUeContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding BSMSContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Height" Value="25" />
+                            <Setter Property="Background" Value="#FF215E21"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.RowBackground>
+                        <ImageBrush ImageSource="{x:Null}" Opacity="1"></ImageBrush>
+                    </DataGrid.RowBackground>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu Name="pmMenuAction" FontSize="14">
+                            <ContextMenu.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </ContextMenu.Background>
+                            <MenuItem Name="mmHistoryDataRefresh" Header="导出数据" Width="150" Height="30" FontSize="14" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="btnExportData_Click">
+                                <MenuItem.Icon>
+                                    <Image  Source="..\Icon\designet.png" Width="16" Height="16"></Image>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnClose" Grid.Column="1" Content="退出" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="40" Click="btnClose_Click"></Button>
+        </Grid>
+    </Grid>
+</Window>

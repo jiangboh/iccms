@@ -1,0 +1,59 @@
+﻿<Page x:Class="iccms.SpecialListManage.RedirectListDeviceTreePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:iccms.SpecialListManage"
+      xmlns:TreeItemModel="clr-namespace:DataInterface;assembly=DataInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="280"
+      Title="{Binding Title}"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <TreeView Name="tvSpecialListDeviceTree" Background="Transparent">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate  DataType="{x:Type TreeItemModel:CheckBoxTreeModel}" ItemsSource="{Binding SelfName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding NodeIcon}" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
+                            <TextBlock Name="txtNodeName" Grid.Column="1" Text="{Binding SelfName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding SelfName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Background="Transparent" Margin="5 0"/>
+                        </Grid>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"></Setter>
+                </Style>
+            </TreeView.ItemContainerStyle>
+
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type TreeItemModel:CheckBoxTreeModel}" ItemsSource="{Binding Children}">
+                    <StackPanel Orientation="Horizontal" x:Name="staTree">
+                        <CheckBox Name="chkTreeViewItem" ToolTip="{Binding ToolTip}" FontSize="14" Tag="{Binding Children}" IsChecked="{Binding IsChecked, Mode=TwoWay}" Click="chkTreeViewItem_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="{Binding Icon}" Width="16" Height="16"></Image>
+                                <TextBlock Name="txtTreeViewItem" Text="{Binding Name}" Tag="{Binding Id}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0 " Background="Transparent"></TextBlock>
+                            </StackPanel>
+                        </CheckBox>
+                    </StackPanel>
+
+                    <HierarchicalDataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked}" Value="true">
+                            <Setter TargetName="staTree" Property="Background" Value="White"/>
+                        </DataTrigger>
+                    </HierarchicalDataTemplate.Triggers>
+
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+
+        </TreeView>
+    </Grid>
+</Page>

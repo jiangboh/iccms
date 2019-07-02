@@ -1,0 +1,210 @@
+﻿<Page x:Name="MainMenuPage" x:Class="iccms.NavigatePages.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:iccms.NavigatePages"
+      mc:Ignorable="d" Background="Transparent" 
+      d:DesignHeight="50"
+      d:DesignWidth="800" 
+      FontSize="14"
+      Title="MainMenu" 
+      Loaded="MainMenuPage_Loaded">
+
+    <Border BorderBrush="{x:Null}" BorderThickness="0">
+        <Grid>
+            <Menu Name="MainMenu" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" FontSize="14">
+                <!--功能-->
+                <MenuItem Name="miFeature" Header="{Binding MFeature}" InputGestureText="Ctrl+P" Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource MenuItemKey}">
+                    <MenuItem Name="miDeviceManage" Header="{Binding MFeatureDem}" Click="miDeviceManage_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\kded.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miNameListManage" Header="{Binding MFeatureNam}" Click="miNameListManage_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\kllckety.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miDataManage" Header="{Binding MFeatureDam}" Click="miDataManage_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\knewstuff.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miSystemLogsWindow" Header="{Binding MFeatureLgm}" Click="miSystemLogsWindow_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\openofficeorg-20.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miExit" Header="退出" Click="miExit_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\Exit.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <!--显示-->
+                <MenuItem Header="{Binding MView}"  InputGestureText="Ctrl+V" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource MenuItemKey}">
+                    <MenuItem Name="miScannerWindow" Header="{Binding MViewScw}" Click="miScannerWindow_Click" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\netscape.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miBlackListWindow" Header="{Binding MViewBlw}" Click="miBlackListWindow_Click" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\clanbomber.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miCallRecordsWindow" Header="{Binding MCallRdw}" Click="miCallRecordsWindow_Click" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\sms.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miSMSRecordsWindow" Header="{Binding MSMSRw}" Click="miSMSRecordsWindow_Click" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\SendMessage.ico" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miStatusWindow" Header="{Binding MViewStw}" Click="miStatusWindow_Click" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\kontact.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miDefaultWindow" Header="{Binding MDefaultWindowCaption}" Click="miDefaultWindow_Click" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\background.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <Separator></Separator>
+
+                    <MenuItem Name="miUnknownDeviceTipsWindow" Header="未知设备提示器" Style="{StaticResource SubMenuItemKey}">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\kcmdf.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                        <MenuItem Name="miUnknownDeviceControlWindowShow" Header="显示" Click="miUnknownDeviceControlWindowShow_Click">
+                            <MenuItem.Icon>
+                                <StackPanel VerticalAlignment="Center">
+                                    <Image Source="..\Icon\1rightarrow.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                                </StackPanel>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="miUnknownDeviceControlWindowHide" Header="隐藏" Click="miUnknownDeviceControlWindowHide_Click">
+                            <MenuItem.Icon>
+                                <StackPanel VerticalAlignment="Center">
+                                    <Image Source="..\Icon\player_pause.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                                </StackPanel>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="miUnknownDeviceControlWindowAuto" Header="自动" Click="miUnknownDeviceControlWindowAuto_Click">
+                            <MenuItem.Icon>
+                                <StackPanel VerticalAlignment="Center">
+                                    <Image Source="..\Icon\agt_update-product.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                                </StackPanel>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="miSystemStatuViewWindow" Header="系统状态监控器" Click="miSystemStatuViewWindow_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\ksame.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miShowMapViewWindow" Header="地图显示" Click="miShowMapViewWindow_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\map.ico" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miStatisticsInfoViewWindow" Header="统计分析" Click="miStatisticsInfoViewWindow_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\web.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <!--设置-->
+                <MenuItem Header="{Binding MSetting}"  InputGestureText="Ctrl+S" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource MenuItemKey}">
+                    <MenuItem x:Name="miUserManage" Header="{Binding MSettingUnm}" Click="miUserManage_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\Login Manager.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="miDeviceDomainNameManage" Header="{Binding MSettingDmm}" Click="miDeviceDomainNameManage_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\package.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="miSystemSetting" Header="{Binding MSettingSym}" Click="miSystemSetting_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\package_utilities.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="miAdvanceSetting" Header="{Binding MSettingAds}" Click="miAdvanceSetting_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\agt_softwareD.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="miBaseParameterSetting" Header="{Binding OperationsCaption}" Click="miBaseParameterSetting_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\kenolaba.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <!--帮助-->
+                <MenuItem Header="{Binding MHelp}"  InputGestureText="Ctrl+H" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource MenuItemKey}">
+                    <MenuItem Name="miHelp" Header="{Binding MHelpHlp}" >
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\help.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="miAbout" Header="{Binding MHelpAbt}" Click="miAbout_Click">
+                        <MenuItem.Icon>
+                            <StackPanel VerticalAlignment="Center">
+                                <Image Source="..\Icon\documentinfo.png" Width="16" Height="16" VerticalAlignment="Center"></Image>
+                            </StackPanel>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+    </Border>
+</Page>

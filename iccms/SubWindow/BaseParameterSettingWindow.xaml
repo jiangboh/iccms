@@ -1,0 +1,384 @@
+﻿<Window x:Class="iccms.SubWindow.BaseParameterSettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.SubWindow"
+        mc:Ignorable="d"
+        Title="参数设置管理器" 
+        Height="590"
+        Width="500"
+        Background="{x:Null}"    
+        AllowsTransparency="True"
+        WindowState="Normal"
+        WindowStyle="None"
+        FontSize="14"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded" 
+        KeyDown="Window_KeyDown"
+        Closed="Window_Closed"
+        MouseMove="Window_MouseMove" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrush}" BorderBrush="#FF05FF54" BorderThickness="1" CornerRadius="10,10,10,10">
+        <Grid>
+            <TabControl Name="TabBaseParameterSetting" SelectedIndex="0" Background="Transparent">
+                <TabItem Name="PageBaseParameterSetting" Header="基本参数设置">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--语言设置-->
+                        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="语言设置" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="50">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="105"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Name="lblLanguage" Grid.Column="0" Content="语言" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <ComboBox Name="cbbLanguage" Grid.Column="1" SelectedIndex="{Binding AbbreviationCode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" Style="{StaticResource ComboBoxStyle}" IsEnabled="False">
+                                        <ComboBoxItem Content="Chinese Simple"></ComboBoxItem>
+                                        <ComboBoxItem Content="English"></ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--捕号上报设置-->
+                        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="捕号上报" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="240">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="105"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="105"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Name="lblSacnnerReportUpdate" Grid.Row="0" Grid.Column="0" Content="刷新时间" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtScannerReportUpdate" Grid.Row="0" Grid.Column="1" Text="{Binding Refresh}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></TextBox>
+
+                                    <Label Name="lblSacnnerReportTotal" Grid.Row="0" Grid.Column="2" Content="显示数量" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtScannerReportTotal" Grid.Row="0" Grid.Column="3" Text="{Binding Tatol,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></TextBox>
+
+                                    <Label Name="lblSacnnerWarningSoundFile" Grid.Row="1" Grid.Column="0" Content="媒体文件" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtSacnnerWarningSoundFile" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding SoundFile}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0 0 80 0" IsReadOnly="False"></TextBox>
+                                    <Button Name="btnSacnnerWarningSoundFile" Grid.Row="1" Grid.Column="3" Content="浏览" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" HorizontalAlignment="Right" Click="btnSacnnerWarningSoundFile_Click"></Button>
+
+                                    <Label Name="lblSacnnerWarningTime" Grid.Row="2" Grid.Column="0" Content="播放间隔" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtSacnnerWarningTime" Grid.Row="2" Grid.Column="1" Text="{Binding SoundDelay}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0 0 25 0"></TextBox>
+                                    <Label Name="lblSacnnerWarningTimeUnit" Grid.Row="2" Grid.Column="1" Content="秒" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+
+                                    <Label Name="lblSacnnerWarningSoundPlayCount" Grid.Row="2" Grid.Column="2" Content="播放次数" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtSacnnerWarningSoundPlayCount" Grid.Row="2" Grid.Column="3" Text="{Binding PlayCount}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" IsReadOnly="True"></TextBox>
+
+                                    <Label Name="lblSacnnerWarningSoundPlayEnable" Grid.Row="3" Grid.Column="0" Content="媒体功能" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <ComboBox Name="cbbSacnnerWarningSoundPlayEnable" Grid.Row="3" Grid.Column="1" SelectedIndex="{Binding SoundEnable}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="110" Height="30" Style="{StaticResource ComboBoxStyle}">
+                                        <ComboBoxItem Content="关闭"></ComboBoxItem>
+                                        <ComboBoxItem Content="打开"></ComboBoxItem>
+                                    </ComboBox>
+
+                                    <CheckBox Name="chkSacnnerWarningSoundPlayMedia" Grid.Row="3" Grid.Column="2" Content="播放媒体" IsChecked="{Binding PlayerMode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkSacnnerWarningSoundPlayMedia_Click"></CheckBox>
+                                    <CheckBox Name="chkSacnnerWarningSoundPlayContent" Grid.Row="3" Grid.Column="3" Content="语音合成" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkSacnnerWarningSoundPlayContent_Click"></CheckBox>
+
+                                    <!--播报方式-->
+                                    <Label Name="lblSacnnerWarningSoundUserType" Grid.Row="4" Grid.Column="0" Content="播报控制" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <CheckBox Name="chkSacnnerWarningSoundWhiteList" Grid.Row="4" Grid.Column="1" Content="白名单播报" IsChecked="{Binding WhiteListMode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkSacnnerWarningSoundWhiteList_Click"></CheckBox>
+                                    <CheckBox Name="chkSacnnerWarningSoundBlackList" Grid.Row="4" Grid.Column="2" Content="黑名单播报" IsChecked="{Binding BlackListMode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkSacnnerWarningSoundBlackList_Click"></CheckBox>
+                                    <CheckBox Name="chkSacnnerWarningSoundOtherList" Grid.Row="4" Grid.Column="3" Content="普通用户播报" IsChecked="{Binding OtherListMode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkSacnnerWarningSoundOtherList_Click"></CheckBox>
+
+                                    <!--底色设置-->
+                                    <Label Name="lblSacnnerWarningSoundBGColorCaption" Grid.Row="5" Grid.Column="0" Content="背景颜色" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <Label Name="lblWhiteListColor" Grid.Row="5" Grid.Column="1" Content="白名单..." Background="{Binding WhiteListBackGround}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Gold" BorderThickness="1" Cursor="Hand" MouseLeftButtonDown="lblWhiteListColor_MouseLeftButtonDown">
+                                        <Label.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Name="miDefaultWhiteListBackGround" Header="恢复默认" Click="miDefaultWhiteListBackGround_Click"></MenuItem>
+                                            </ContextMenu>
+                                        </Label.ContextMenu>
+                                    </Label>
+                                    <Label Name="lblBlackListColor" Grid.Row="5" Grid.Column="2" Content="黑名单..." Background="{Binding BlackListBackGround}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Gold" BorderThickness="1" Cursor="Hand" MouseLeftButtonDown="lblBlackListColor_MouseLeftButtonDown">
+                                        <Label.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Name="miDefaultBlackListBackGround" Header="恢复默认" Click="miDefaultBlackListBackGround_Click"></MenuItem>
+                                            </ContextMenu>
+                                        </Label.ContextMenu>
+                                    </Label>
+                                    <Label Name="lblOtherListColor" Grid.Row="5" Grid.Column="3" Content="普通用户..." Background="{Binding OtherListBackGround}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Gold" BorderThickness="1" Cursor="Hand" MouseLeftButtonDown="lblOtherListColor_MouseLeftButtonDown">
+                                        <Label.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Name="miDefaultOtherListBackGround" Header="恢复默认" Click="miDefaultOtherListBackGround_Click"></MenuItem>
+                                            </ContextMenu>
+                                        </Label.ContextMenu>
+                                    </Label>
+
+                                    <!--用户类型-->
+                                    <Label Name="lblCustomUserTypeCaption" Grid.Row="6" Grid.Column="0" Content="用户类型" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <Button Name="btnCustomUserTypeSetting" Grid.Row="6" Grid.Column="1" Content="Stop" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Background="Transparent">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Border BorderBrush="Orange" BorderThickness="1">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="24"></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Image Name="imgCustomUserTypeSetting" Grid.Column="0" Source="..\Icon\daemons.png" Width="24" Height="24" HorizontalAlignment="Left" MouseLeftButtonDown="lblCustomUserTypeSetting_MouseLeftButtonDown">
+                                                        </Image>
+                                                        <Label Name="lblCustomUserTypeSetting" Grid.Column="1" Content="设置..." VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Cursor="Hand" Width="110" MouseLeftButtonDown="lblCustomUserTypeSetting_MouseLeftButtonDown"></Label>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--设备管理设置-->
+                        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="设备管理" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="100">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="105"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Name="lblPLMNLength" Grid.Row="0" Grid.Column="0" Content="PLMN长度" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtPLMNLength" Grid.Row="0" Grid.Column="1" Text="{Binding Operators}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></TextBox>
+                                    <Label Name="lblSMSBrowseStatu" Grid.Row="1" Grid.Column="0" Content="短信息预览" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <Grid Grid.Row="1" Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="95"></ColumnDefinition>
+                                            <ColumnDefinition Width="95"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <CheckBox Name="chkBrowseEnable" Grid.Row="0" Grid.Column="0" Content="是" IsChecked="{Binding SMSBrowseYes}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkBrowseEnable_Click"></CheckBox>
+                                        <CheckBox Name="chkBrowseDisEnable" Grid.Row="0" Grid.Column="1" Content="否" IsChecked="{Binding SMSBrowseNo}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="chkBrowseDisEnable_Click"></CheckBox>
+                                    </Grid>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--网络检测-->
+                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="网络检测" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="55">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="105"></ColumnDefinition>
+                                        <ColumnDefinition Width="115"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Name="lblHeartTime" Grid.Row="0" Grid.Column="0" Content="延时" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtHeartTime" Grid.Row="0" Grid.Column="1" Text="{Binding Time}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></TextBox>
+                                    <Label Name="lblHeartTimeUnit" Grid.Row="0" Grid.Column="2" Content="秒" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30"></Label>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--系统日志设置-->
+                        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="系统日志" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="55">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="105"></ColumnDefinition>
+                                        <ColumnDefinition Width="180"></ColumnDefinition>
+                                        <ColumnDefinition Width="85"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Name="lblSaveWays" Grid.Row="0" Grid.Column="0" Content="保存方式" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <ComboBox Name="txtSaveWays" Grid.Row="0" Grid.Column="1" SelectedIndex="{Binding LogStatus}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" Style="{StaticResource ComboBoxStyle}">
+                                        <ComboBoxItem Content="Access(库文件)"></ComboBoxItem>
+                                        <ComboBoxItem Content="Text(文本文件)"></ComboBoxItem>
+                                    </ComboBox>
+                                    <Label Name="lblShowTotal" Grid.Row="0" Grid.Column="2" Content="显示数量" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Height="30"></Label>
+                                    <TextBox Name="txtShowTotal" Grid.Row="0" Grid.Column="3" Text="{Binding Total}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></TextBox>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--按扭-->
+                        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Name="btnSave" Grid.Row="0" Grid.Column="2" Content="确定" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnSave_Click"></Button>
+                                <Button Name="btnExit" Grid.Row="0" Grid.Column="3" Content="取消" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnExit_Click"></Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="PageFTPParameterSetting" Header="上传与下载参数设置">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!--FTP参数设置-->
+                        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="FTP参数设置" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="Auto">
+                                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="95"></ColumnDefinition>
+                                        <ColumnDefinition Width="145"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label x:Name="lblUserName" Grid.Row="0"  Grid.Column="0" Content="用户名称" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txtUserName" Grid.Column="1" Grid.Row="0" Text="{Binding Path=ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
+
+                                    <Label x:Name="lblPassWord" Grid.Row="0" Grid.Column="2" Content="密码" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <PasswordBox x:Name="txtPassWord" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
+
+                                    <Label x:Name="lblFTPRoot" Grid.Row="1" Grid.Column="0" Content="主目录" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txtFTPRoot" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Root,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="1"  VerticalAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
+
+                                    <Label x:Name="lblFTPPort" Grid.Row="1" Grid.Column="2" Content="端口" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txtFTPPort" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" Text="{Binding Path=Port,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MinHeight="1" MaxLength="5" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
+
+                                    <Label x:Name="lblFtpRootWithSN" Grid.Row="3" Grid.Column="0" Content="目录扩展" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <CheckBox Name="chkFtpRootWithSN" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Content="使用[SN]作为Log目录" IsChecked="{Binding Path=RootWithSN,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center"></CheckBox>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--AP系统升级参数设置-->
+                        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+                            <GroupBox Header="AP系统升级参数设置" Style="{StaticResource GroupboxWithoutWhiteBorder}" Height="Auto">
+                                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="95"></ColumnDefinition>
+                                        <ColumnDefinition Width="145"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label x:Name="lblUpdateDelay" Grid.Row="0"  Grid.Column="0" Content="超时" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txtUpdateDelay" Grid.Column="1" Grid.Row="0" Text="{Binding Path=UpDateTimeOut,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
+                                    <Label x:Name="lblUpdateDelayUnit" Grid.Row="0"  Grid.Column="2" Grid.ColumnSpan="2" Content="单位：分钟" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+
+                                    <Label x:Name="lblSourceFilePath" Grid.Row="1"  Grid.Column="0" Content="升级包路径" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txtSourceFilePath" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Path=UpDateFileSourceDir,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Height="25"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!--按扭-->
+                        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Name="btnFTPParaSettingSave" Grid.Row="0" Grid.Column="2" Content="确定" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnFTPParaSettingSave_Click"></Button>
+                                <Button Name="btnFTPParaSettingExit" Grid.Row="0" Grid.Column="3" Content="取消" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnFTPParaSettingExit_Click"></Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="PageSubWindowsControl" Header="窗口设置">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="95"></ColumnDefinition>
+                            <ColumnDefinition Width="95"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <GroupBox Name="WinControlBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="4" Header="主窗口自定义显示" Style="{StaticResource GroupboxWithoutWhiteBorder}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <CheckBox Name="chkDefaultWin" Grid.Row="0" Grid.Column="1" Content="全部" IsChecked="{Binding AllWin,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Click="chkDefaultWin_Click"></CheckBox>
+                                <CheckBox Name="chkDeviceListWin" Grid.Row="1" Grid.Column="1" Content="设备列表" IsChecked="{Binding DeviceListWin,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Click="chkDeviceListWin_Click"></CheckBox>
+                                <CheckBox Name="chkScannerWin" Grid.Row="2" Grid.Column="1" Content="捕号窗口" IsChecked="{Binding ScannerWin,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Click="chkScannerWin_Click"></CheckBox>
+                                <CheckBox Name="chkBlackListWin" Grid.Row="3" Grid.Column="1" Content="黑名单窗口" IsChecked="{Binding BlackListWin,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Click="chkBlackListWin_Click"></CheckBox>
+                                <CheckBox Name="chkSystemLogsWin" Grid.Row="4" Grid.Column="1" Content="系统日志窗口" IsChecked="{Binding SystemLogsWin,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Click="chkSystemLogsWin_Click"></CheckBox>
+                            </Grid>
+                        </GroupBox>
+                        <Button Name="btnWinControlEnter" Grid.Row="4" Grid.Column="2" Width="75" Height="30" Cursor="Hand" Content="确定" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Click="btnWinControlEnter_Click"></Button>
+                        <Button Name="btnWinControlCancel" Grid.Row="4" Grid.Column="3" Width="75" Height="30" Cursor="Hand" Content="取消" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Click="btnWinControlCancel_Click"></Button>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Border>
+</Window>

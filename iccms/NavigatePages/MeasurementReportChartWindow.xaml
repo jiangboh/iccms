@@ -1,0 +1,27 @@
+﻿<Page x:Class="iccms.NavigatePages.MeasurementReportChartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.NavigatePages"
+        xmlns:arrow="clr-namespace:iccms.Arrows"
+        mc:Ignorable="d"
+        Title="MeasurementReportChart" 
+        x:Name="MeasurementReportChartWin"
+        Height="{Binding ChartWindowHeight,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+        Width="{Binding ChartWindowWidth,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+        Loaded="MeasurementReportChartWin_Loaded"
+        Unloaded="MeasurementReportChartWin_Unloaded">
+
+    <Border>
+        <Grid>
+            <Canvas Name = "ChartBackGround" Background="{Binding ChartBackGround, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="{Binding CharArea_Width,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="{Binding CharArea_Height,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                <Canvas Name="CoordinateGraphs" Background="Transparent" Width="{Binding CharArea_Width,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="{Binding CharArea_Height,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                    <Canvas Name="ChartArea" Background="Transparent" Width="{Binding CharArea_Width,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="{Binding CharArea_Height,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SizeChanged="ChartArea_SizeChanged">
+
+                    </Canvas>
+                </Canvas>
+            </Canvas>
+        </Grid>
+    </Border>
+</Page>

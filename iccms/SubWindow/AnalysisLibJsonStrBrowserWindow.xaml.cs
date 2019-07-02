@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace iccms.SubWindow
+{
+    /// <summary>
+    /// AnalysisLibJsonStrBrowserWindow.xaml 的交互逻辑
+    /// </summary>
+    public partial class AnalysisLibJsonStrBrowserWindow : Window
+    {
+        public AnalysisLibJsonStrBrowserWindow()
+        {
+            InitializeComponent();
+            this.Owner = Application.Current.MainWindow;
+        }
+
+        private void btnJsonStrDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mmExport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mmJsonStrClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtJsonStr_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void txtJsonStr_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (btnClose.IsFocused)
+                {
+                    this.DragMove();
+                }
+            }
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            btnClose.Focus();
+        }
+    }
+}

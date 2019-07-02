@@ -1,0 +1,1433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E32C204F-863F-47CC-AE84-5AF0ED6699C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iccms</RootNamespace>
+    <AssemblyName>iccms</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Safari.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Arction.DirectX, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.DirectX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.DirectXFiles, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.DirectXFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.DirectXInit, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.DirectXInit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.Licensing, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.Licensing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.RenderingDefinitions, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.RenderingDefinitions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.RenderingEngine, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.RenderingEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.RenderingEngine11, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.RenderingEngine11.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.RenderingEngine9, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.RenderingEngine9.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.Wpf.BindableCharting.LightningChartUltimate, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.Wpf.BindableCharting.LightningChartUltimate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.Wpf.Charting.LightningChartUltimate, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.Wpf.Charting.LightningChartUltimate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Arction.Wpf.SemibindableCharting.LightningChartUltimate, Version=8.3.2.4001, Culture=neutral, PublicKeyToken=6484d7bb14b95dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightningChartUltimateWPF8.8.3.2.1\lib\net40-client\Arction.Wpf.SemibindableCharting.LightningChartUltimate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ColorPickerWPF, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ColorPickerWPF.1.0.9\lib\net461\ColorPickerWPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Language_CN, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Plug_ins\Language_CN.dll</HintPath>
+    </Reference>
+    <Reference Include="Language_EN, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Plug_ins\Language_EN.dll</HintPath>
+    </Reference>
+    <Reference Include="Lierda.WPFHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cbb49eab16984ff2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lierda.WPFHelper.1.0.3\lib\net461\Lierda.WPFHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Loya.Dameer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DateTimePicker WPF\Loya.Dameer\Loya.Dameer\Loya.Dameer\bin\Debug\Loya.Dameer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>bin\Debug\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFVisifire.Charts, Version=5.1.2.0, Culture=neutral, PublicKeyToken=0cd785983078370b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.Wpf, Version=1.5.0.0, Culture=neutral, PublicKeyToken=50375ca6144f1c69, processorArchitecture=MSIL">
+      <HintPath>..\packages\WriteableBitmapEx.1.5.1.0\lib\net40\WriteableBitmapEx.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Arrows\AdjustableArrowBezierCurve.cs" />
+    <Compile Include="Arrows\AdjustableArrowQuadraticBezier.cs" />
+    <Compile Include="Arrows\ArrowBase.cs" />
+    <Compile Include="Arrows\ArrowBezierCurve.cs" />
+    <Compile Include="Arrows\ArrowEnds.cs" />
+    <Compile Include="Arrows\ArrowLine.cs" />
+    <Compile Include="Arrows\ArrowLineWithText.cs" />
+    <Compile Include="Arrows\ArrowQuadraticBezier.cs" />
+    <Compile Include="FtpHelper.cs" />
+    <Compile Include="NavigatePages\DeviceLoadingStatusWindow.xaml.cs">
+      <DependentUpon>DeviceLoadingStatusWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\MeasurementReportChartWindow.xaml.cs">
+      <DependentUpon>MeasurementReportChartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\TDSScannerInfoWindow.xaml.cs">
+      <DependentUpon>TDSScannerInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\ScannerInfoWindow.xaml.cs">
+      <DependentUpon>ScannerInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\BatchRebootAPControlWindow.xaml.cs">
+      <DependentUpon>BatchRebootAPControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\StatisticalAnalysisWindow.xaml.cs">
+      <DependentUpon>StatisticalAnalysisWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\ShowDBMapWindow.xaml.cs">
+      <DependentUpon>ShowDBMapWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialListManage\BWListDeviceLoadStatuControlWindow.xaml.cs">
+      <DependentUpon>BWListDeviceLoadStatuControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialListManage\RedirectListDeviceTreePage.xaml.cs">
+      <DependentUpon>RedirectListDeviceTreePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialListManage\BWhiteListDeviceTreePage.xaml.cs">
+      <DependentUpon>BWhiteListDeviceTreePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialListManage\BWListAddWindow.xaml.cs">
+      <DependentUpon>BWListAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialListManage\BWListEditorWindow.xaml.cs">
+      <DependentUpon>BWListEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\AnalysisLibJsonStrBrowserWindow.xaml.cs">
+      <DependentUpon>AnalysisLibJsonStrBrowserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\BaseParameterSettingWindow.xaml.cs">
+      <DependentUpon>BaseParameterSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\CDMAIMSIListInputWindow.xaml.cs">
+      <DependentUpon>CDMAIMSIListInputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\ChartCoordinateInfoWindow.xaml.cs">
+      <DependentUpon>ChartCoordinateInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\CustomUserTypeAddWindow.xaml.cs">
+      <DependentUpon>CustomUserTypeAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\CustomUserTypeWindow.xaml.cs">
+      <DependentUpon>CustomUserTypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\DeviceDetailWindow.xaml.cs">
+      <DependentUpon>DeviceDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\GSMCarrierChoiseWindow.xaml.cs">
+      <DependentUpon>GSMCarrierChoiseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\GSMV2SMSIMSIListWindow.xaml.cs">
+      <DependentUpon>GSMV2SMSIMSIListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\LogsFileListWindow.xaml.cs">
+      <DependentUpon>LogsFileListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\ProgressBarWindow.xaml.cs">
+      <DependentUpon>ProgressBarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\RedirectParamWindow.xaml.cs">
+      <DependentUpon>RedirectParamWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\RedirectWindow.xaml.cs">
+      <DependentUpon>RedirectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SelectBandWidthWin.xaml.cs">
+      <DependentUpon>SelectBandWidthWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SelectBandWidthWindow.xaml.cs">
+      <DependentUpon>SelectBandWidthWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\ShowSelectScannerDataDialog.xaml.cs">
+      <DependentUpon>ShowSelectScannerDataDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SystemLogsShowWindow.xaml.cs">
+      <DependentUpon>SystemLogsShowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SystemStatusViewWindow.xaml.cs">
+      <DependentUpon>SystemStatusViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\UnKnownDeviceListsControlWindow.xaml.cs">
+      <DependentUpon>UnKnownDeviceListsControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\UnknownDeviceStationWindow.xaml.cs">
+      <DependentUpon>UnknownDeviceStationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\UnknownDevieReNameWindow.xaml.cs">
+      <DependentUpon>UnknownDevieReNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\UpDownLoadFilesWindow.xaml.cs">
+      <DependentUpon>UpDownLoadFilesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\VolumeActiveOrUnActiveProgressBarWindow.xaml.cs">
+      <DependentUpon>VolumeActiveOrUnActiveProgressBarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\WhiteListSelfLearningSettingWindow.xaml.cs">
+      <DependentUpon>WhiteListSelfLearningSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnKnownDeviceListsWindow.xaml.cs">
+      <DependentUpon>UnKnownDeviceListsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForCloseWindow.xaml.cs">
+      <DependentUpon>WaitForCloseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WelComeWindow.xaml.cs">
+      <DependentUpon>WelComeWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CheckBoxStyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComponentSymbol\DeviceDomainNameManageWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DictionaryLanguage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DictionaryStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentSymbol\DeviceDomainNameManageWin.xaml.cs">
+      <DependentUpon>DeviceDomainNameManageWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NavigatePages\AddTreeItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\AddUserGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\AddUserInfor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\AdvanceSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\DeviceLoadingStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\MeasurementReportChartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\TDSScannerInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigatePages\ScannerInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\BatchRebootAPControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\StatisticalAnalysisWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\ShowDBMapWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialListManage\BWListDeviceLoadStatuControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialListManage\RedirectListDeviceTreePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SpecialListManage\BWhiteListDeviceTreePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\DataManage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigatePages\AddDeviceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\DeviceInfoSettingModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\DeviceManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigatePages\DeviceListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\InputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\DomainManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\NameListManage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigatePages\SettingSym.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\StatisticalInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\SystemLogInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\UEInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\UpdateUserInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatePages\UserManageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialListManage\BWListAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialListManage\BWListEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\AnalysisLibJsonStrBrowserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\BaseParameterSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\CDMAIMSIListInputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\ChartCoordinateInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\CustomUserTypeAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\CustomUserTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\DeviceDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\GSMCarrierChoiseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\GSMV2SMSIMSIListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\LogsFileListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\ProgressBarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\RedirectParamWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\RedirectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\SelectBandWidthWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\SelectBandWidthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\ShowSelectScannerDataDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\SystemLogsShowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\SystemStatusViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\UnKnownDeviceListsControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\UnknownDeviceStationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\UnknownDevieReNameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\UpDownLoadFilesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\VolumeActiveOrUnActiveProgressBarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\WhiteListSelfLearningSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnKnownDeviceListsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaitForCloseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelComeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NavigatePages\AddTreeItem.xaml.cs">
+      <DependentUpon>AddTreeItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\AddUserGroup.xaml.cs">
+      <DependentUpon>AddUserGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\AddUserInfor.xaml.cs">
+      <DependentUpon>AddUserInfor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\AdvanceSetting.xaml.cs">
+      <DependentUpon>AdvanceSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\DataManage.xaml.cs">
+      <DependentUpon>DataManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\AddDeviceWindow.xaml.cs">
+      <DependentUpon>AddDeviceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\DeviceInfoSettingModel.xaml.cs">
+      <DependentUpon>DeviceInfoSettingModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\DeviceManagerWindow.xaml.cs">
+      <DependentUpon>DeviceManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\DeviceListWindow.xaml.cs">
+      <DependentUpon>DeviceListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\InputWindow.xaml.cs">
+      <DependentUpon>InputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\DomainManage.xaml.cs">
+      <DependentUpon>DomainManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\NameListManage.xaml.cs">
+      <DependentUpon>NameListManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\SettingSym.xaml.cs">
+      <DependentUpon>SettingSym.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\StatisticalInfoWindow.xaml.cs">
+      <DependentUpon>StatisticalInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\SystemLogInfo.xaml.cs">
+      <DependentUpon>SystemLogInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\UEInfoWindow.xaml.cs">
+      <DependentUpon>UEInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\UpdateUserInfo.xaml.cs">
+      <DependentUpon>UpdateUserInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatePages\UserManageWindow.xaml.cs">
+      <DependentUpon>UserManageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DataInterface\DataInterface.csproj">
+      <Project>{01e6ecd2-7ca6-4eae-86f3-76f8c4391379}</Project>
+      <Name>DataInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="IODataControl\IODataControl.csproj">
+      <Project>{e0b2ffac-65ed-481c-958f-0530a22a61ea}</Project>
+      <Name>IODataControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="JsonLib\JsonLib.csproj">
+      <Project>{ff946638-1b85-46e9-b3da-fce3437ac974}</Project>
+      <Name>JsonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="NetController\NetController.csproj">
+      <Project>{50529f80-ac1b-4d13-b846-27ec1ed672e8}</Project>
+      <Name>NetController</Name>
+    </ProjectReference>
+    <ProjectReference Include="ParameterControl\ParameterControl.csproj">
+      <Project>{c3bccf3f-8a90-4bb9-8345-3894dc322bcc}</Project>
+      <Name>ParameterControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Bg.gif" />
+    <Resource Include="Img\Bg1.jpg" />
+    <Resource Include="Img\Bg8.jpg" />
+    <Resource Include="Img\BGNu.jpg" />
+    <Resource Include="Img\Device Setting Page.jpg" />
+    <Resource Include="Img\Device Status Page.jpg" />
+    <Resource Include="Img\Home page.jpg" />
+    <Resource Include="Img\login-poto_a015b0f.gif" />
+    <Resource Include="Img\Login_A.jpg" />
+    <Resource Include="Img\timg.jpg" />
+    <Resource Include="Img\timg5NEAEQCP.jpg" />
+    <Resource Include="Img\timgRHMCH7FY.jpg" />
+    <Resource Include="Img\timgUSK73JR5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackGround\Bg.gif" />
+    <Resource Include="BackGround\BG1.jpg" />
+    <Resource Include="BackGround\BG3.jpg" />
+    <Resource Include="BackGround\BG4.jpg" />
+    <Resource Include="BackGround\BG5.jpg" />
+    <Resource Include="BackGround\BG6.jpg" />
+    <Resource Include="BackGround\Bg8.jpg" />
+    <Resource Include="BackGround\Bg9.jpg" />
+    <Resource Include="BackGround\BGNu.png" />
+    <Resource Include="BackGround\timg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\dmdskres_00012.ico" />
+    <Resource Include="Icon\dmdskres_00013.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\1day.png" />
+    <Resource Include="Icon\1downarrow.png" />
+    <Resource Include="Icon\1downarrow1.png" />
+    <Resource Include="Icon\1leftarrow.png" />
+    <Resource Include="Icon\1rightarrow.png" />
+    <Resource Include="Icon\1uparrow.png" />
+    <Resource Include="Icon\2408.ico" />
+    <Resource Include="Icon\2408.png" />
+    <Resource Include="Icon\2dowarrow.png" />
+    <Resource Include="Icon\2downarrow.png" />
+    <Resource Include="Icon\2downarrow1.png" />
+    <Resource Include="Icon\2leftarrow.png" />
+    <Resource Include="Icon\2rightarrow.png" />
+    <Resource Include="Icon\2uparrow.png" />
+    <Resource Include="Icon\3d.png" />
+    <Resource Include="Icon\3dowarrow.png" />
+    <Resource Include="Icon\3uparrow.png" />
+    <Resource Include="Icon\5days.png" />
+    <Resource Include="Icon\7days.png" />
+    <Resource Include="Icon\about_kde.png" />
+    <Resource Include="Icon\access.png" />
+    <Resource Include="Icon\accessibilitycpl_00004.ico" />
+    <Resource Include="Icon\acroread.png" />
+    <Resource Include="Icon\ActionCenterCPL_00002.ico" />
+    <Resource Include="Icon\ActionCenterCPL_00003.ico" />
+    <Resource Include="Icon\ActionCenterCPL_00004.ico" />
+    <Resource Include="Icon\add_group.png" />
+    <Resource Include="Icon\add_user.png" />
+    <Resource Include="Icon\advanced.png" />
+    <Resource Include="Icon\advancedsettings.png" />
+    <Resource Include="Icon\agent.png" />
+    <Resource Include="Icon\agt_action_fail.png" />
+    <Resource Include="Icon\agt_action_fail1.png" />
+    <Resource Include="Icon\agt_action_success.png" />
+    <Resource Include="Icon\agt_add-to-autorun.png" />
+    <Resource Include="Icon\agt_add-to-desktop.png" />
+    <Resource Include="Icon\agt_aisles.png" />
+    <Resource Include="Icon\agt_announcements.png" />
+    <Resource Include="Icon\agt_back.png" />
+    <Resource Include="Icon\agt_business.png" />
+    <Resource Include="Icon\agt_desktop_enhancements.png" />
+    <Resource Include="Icon\agt_forum.png" />
+    <Resource Include="Icon\agt_forward.png" />
+    <Resource Include="Icon\agt_games.png" />
+    <Resource Include="Icon\agt_home.png" />
+    <Resource Include="Icon\agt_internet.png" />
+    <Resource Include="Icon\agt_member.png" />
+    <Resource Include="Icon\agt_mp3.png" />
+    <Resource Include="Icon\agt_multimedia.png" />
+    <Resource Include="Icon\agt_pause-queue.png" />
+    <Resource Include="Icon\agt_print.png" />
+    <Resource Include="Icon\agt_reload.png" />
+    <Resource Include="Icon\agt_resume.png" />
+    <Resource Include="Icon\agt_runit.png" />
+    <Resource Include="Icon\agt_softwareD.png" />
+    <Resource Include="Icon\agt_stop.png" />
+    <Resource Include="Icon\agt_stop1.png" />
+    <Resource Include="Icon\agt_support.png" />
+    <Resource Include="Icon\agt_uninstall-product.png" />
+    <Resource Include="Icon\agt_uninstall_product.png" />
+    <Resource Include="Icon\agt_update-product.png" />
+    <Resource Include="Icon\agt_update_critical.png" />
+    <Resource Include="Icon\agt_update_drivers.png" />
+    <Resource Include="Icon\agt_update_misc.png" />
+    <Resource Include="Icon\agt_update_recommended.png" />
+    <Resource Include="Icon\agt_update_recommended1.png" />
+    <Resource Include="Icon\agt_upgrade_misc.png" />
+    <Resource Include="Icon\agt_Utilities.png" />
+    <Resource Include="Icon\agt_virus-off.png" />
+    <Resource Include="Icon\agt_virus.png" />
+    <Resource Include="Icon\agt_virussafe.png" />
+    <Resource Include="Icon\agt_web.png" />
+    <Resource Include="Icon\aim.png" />
+    <Resource Include="Icon\aim_protocol.png" />
+    <Resource Include="Icon\aisles.png" />
+    <Resource Include="Icon\aktion.png" />
+    <Resource Include="Icon\alarmd.png" />
+    <Resource Include="Icon\alert.png" />
+    <Resource Include="Icon\All software is current.png" />
+    <Resource Include="Icon\amor.png" />
+    <Resource Include="Icon\announcements.png" />
+    <Resource Include="Icon\antivirus.png" />
+    <Resource Include="Icon\anti_spam.png" />
+    <Resource Include="Icon\appearance.png" />
+    <Resource Include="Icon\applixware.png" />
+    <Resource Include="Icon\apply.png" />
+    <Resource Include="Icon\appointment.png" />
+    <Resource Include="Icon\ark.png" />
+    <Resource Include="Icon\arts.png" />
+    <Resource Include="Icon\artsbuilder.png" />
+    <Resource Include="Icon\artsbuilderexecute.png" />
+    <Resource Include="Icon\artscontrol.png" />
+    <Resource Include="Icon\assistant.png" />
+    <Resource Include="Icon\atlantik.png" />
+    <Resource Include="Icon\atlantikdesigner.png" />
+    <Resource Include="Icon\attach.png" />
+    <Resource Include="Icon\audio&amp;video.png" />
+    <Resource Include="Icon\autostart.png" />
+    <Resource Include="Icon\autostart1.png" />
+    <Resource Include="Icon\babelfish.png" />
+    <Resource Include="Icon\back.png" />
+    <Resource Include="Icon\background.png" />
+    <Resource Include="Icon\bell.png" />
+    <Resource Include="Icon\blender.png" />
+    <Resource Include="Icon\blockdevice.png" />
+    <Resource Include="Icon\bookmark.png" />
+    <Resource Include="Icon\bookmarks_list_add.png" />
+    <Resource Include="Icon\bookmark_add.png" />
+    <Resource Include="Icon\bookmark_folder.png" />
+    <Resource Include="Icon\bookmark_toolbar.png" />
+    <Resource Include="Icon\browser.png" />
+    <Resource Include="Icon\browser_alt.png" />
+    <Resource Include="Icon\bug.png" />
+    <Resource Include="Icon\build.png" />
+    <Resource Include="Icon\buisness.png" />
+    <Resource Include="Icon\business.png" />
+    <Resource Include="Icon\button_cancel.png" />
+    <Resource Include="Icon\button_ok.png" />
+    <Resource Include="Icon\cache.png" />
+    <Resource Include="Icon\cal.png" />
+    <Resource Include="Icon\calc.png" />
+    <Resource Include="Icon\calendars.png" />
+    <Resource Include="Icon\camera.png" />
+    <Resource Include="Icon\camera_test.png" />
+    <Resource Include="Icon\camera_unmount---.png" />
+    <Resource Include="Icon\cancel.png" />
+    <Resource Include="Icon\cardgame.png" />
+    <Resource Include="Icon\cdcopy.png" />
+    <Resource Include="Icon\cdinfo.png" />
+    <Resource Include="Icon\cdrwblank.png" />
+    <Resource Include="Icon\cervisia.png" />
+    <Resource Include="Icon\chardevice---.png" />
+    <Resource Include="Icon\chat.png" />
+    <Resource Include="Icon\clanbomber.png" />
+    <Resource Include="Icon\clean.png" />
+    <Resource Include="Icon\clicknrun.png" />
+    <Resource Include="Icon\clicknrungrey.png" />
+    <Resource Include="Icon\clock.png" />
+    <Resource Include="Icon\cnr-pending.png" />
+    <Resource Include="Icon\cnr.png" />
+    <Resource Include="Icon\cnrclient.png" />
+    <Resource Include="Icon\cnrdelete-all.png" />
+    <Resource Include="Icon\cnrdelete-all1.png" />
+    <Resource Include="Icon\cnrgrey.png" />
+    <Resource Include="Icon\cnruninstall.png" />
+    <Resource Include="Icon\colorize.png" />
+    <Resource Include="Icon\colors.png" />
+    <Resource Include="Icon\Community Help.png" />
+    <Resource Include="Icon\compfile.png" />
+    <Resource Include="Icon\configure.png" />
+    <Resource Include="Icon\connect_creating.png" />
+    <Resource Include="Icon\connect_established.png" />
+    <Resource Include="Icon\connect_no.png" />
+    <Resource Include="Icon\contents.png" />
+    <Resource Include="Icon\contexthelp.png" />
+    <Resource Include="Icon\cookie.png" />
+    <Resource Include="Icon\core.png" />
+    <Resource Include="Icon\daemons.png" />
+    <Resource Include="Icon\database.png" />
+    <Resource Include="Icon\date.png" />
+    <Resource Include="Icon\db.png" />
+    <Resource Include="Icon\db_add.png" />
+    <Resource Include="Icon\db_comit.png" />
+    <Resource Include="Icon\db_remove.png" />
+    <Resource Include="Icon\db_status.png" />
+    <Resource Include="Icon\db_update.png" />
+    <Resource Include="Icon\decrypted.png" />
+    <Resource Include="Icon\demo.png" />
+    <Resource Include="Icon\designet.png" />
+    <Resource Include="Icon\desktop-enhancments.png" />
+    <Resource Include="Icon\desktopshare.png" />
+    <Resource Include="Icon\desktop_enhancements.png" />
+    <Resource Include="Icon\disksfilesystems.png" />
+    <Resource Include="Icon\display.png" />
+    <Resource Include="Icon\displayconfig.png" />
+    <Resource Include="Icon\documentinfo.png" />
+    <Resource Include="Icon\down.png" />
+    <Resource Include="Icon\download.png" />
+    <Resource Include="Icon\download_manager.png" />
+    <Resource Include="Icon\drop kbtobexclient.png" />
+    <Resource Include="Icon\drop.png" />
+    <Resource Include="Icon\DxpTaskSync_00011.ico" />
+    <Resource Include="Icon\edit.png" />
+    <Resource Include="Icon\editclear.png" />
+    <Resource Include="Icon\editcopy.png" />
+    <Resource Include="Icon\editcut.png" />
+    <Resource Include="Icon\editdelete.png" />
+    <Resource Include="Icon\editpaste.png" />
+    <Resource Include="Icon\edittrash.png" />
+    <Resource Include="Icon\edit_add.png" />
+    <Resource Include="Icon\edit_remove ----.png" />
+    <Resource Include="Icon\edit_remove.png" />
+    <Resource Include="Icon\education.png" />
+    <Resource Include="Icon\encrypted.png" />
+    <Resource Include="Icon\endturn.png" />
+    <Resource Include="Icon\energy.png" />
+    <Resource Include="Icon\energy_star.png" />
+    <Resource Include="Icon\enhanced_browsing.png" />
+    <Resource Include="Icon\error.png" />
+    <Resource Include="Icon\exec.png" />
+    <Resource Include="Icon\exit.png" />
+    <Resource Include="Icon\Export.ico" />
+    <Resource Include="Icon\field.png" />
+    <Resource Include="Icon\fifteenpieces.png" />
+    <Resource Include="Icon\file-manager.png" />
+    <Resource Include="Icon\fileclose.png" />
+    <Resource Include="Icon\fileexport.png" />
+    <Resource Include="Icon\filefind.png" />
+    <Resource Include="Icon\fileimport.png" />
+    <Resource Include="Icon\filenew.png" />
+    <Resource Include="Icon\fileopen.png" />
+    <Resource Include="Icon\fileprint.png" />
+    <Resource Include="Icon\fileprint1.png" />
+    <Resource Include="Icon\filequickprint.png" />
+    <Resource Include="Icon\filesave.png" />
+    <Resource Include="Icon\filesaveas.png" />
+    <Resource Include="Icon\fileshare.png" />
+    <Resource Include="Icon\filetypes.png" />
+    <Resource Include="Icon\filter.png" />
+    <Resource Include="Icon\find.png" />
+    <Resource Include="Icon\findf.png" />
+    <Resource Include="Icon\firefox.png" />
+    <Resource Include="Icon\firefox_alt.png" />
+    <Resource Include="Icon\firewall.png" />
+    <Resource Include="Icon\folder.png" />
+    <Resource Include="Icon\folder_new.png" />
+    <Resource Include="Icon\folder_sent_mail.png" />
+    <Resource Include="Icon\font.png" />
+    <Resource Include="Icon\fortress.png" />
+    <Resource Include="Icon\forward.png" />
+    <Resource Include="Icon\funct.png" />
+    <Resource Include="Icon\gadu.png" />
+    <Resource Include="Icon\gaim.png" />
+    <Resource Include="Icon\gaimphone.png" />
+    <Resource Include="Icon\galeon.png" />
+    <Resource Include="Icon\games.png" />
+    <Resource Include="Icon\gear.png" />
+    <Resource Include="Icon\gimp.png" />
+    <Resource Include="Icon\gnome_apps.png" />
+    <Resource Include="Icon\go.png" />
+    <Resource Include="Icon\gohome.png" />
+    <Resource Include="Icon\go_kde.png" />
+    <Resource Include="Icon\gpg.png" />
+    <Resource Include="Icon\gpgsm.png" />
+    <Resource Include="Icon\graphic-design.png" />
+    <Resource Include="Icon\groupevent.png" />
+    <Resource Include="Icon\gvim.png" />
+    <Resource Include="Icon\halfencrypted.png" />
+    <Resource Include="Icon\harddrive.png" />
+    <Resource Include="Icon\harddrive2.png" />
+    <Resource Include="Icon\hardware.png" />
+    <Resource Include="Icon\help.png" />
+    <Resource Include="Icon\help_index.png" />
+    <Resource Include="Icon\hgcpl_00004.ico" />
+    <Resource Include="Icon\hibernate.png" />
+    <Resource Include="Icon\highlight.png" />
+    <Resource Include="Icon\home&amp;food.png" />
+    <Resource Include="Icon\home.png" />
+    <Resource Include="Icon\hwinfo.png" />
+    <Resource Include="Icon\icons.png" />
+    <Resource Include="Icon\iconthemes.png" />
+    <Resource Include="Icon\identity.png" />
+    <Resource Include="Icon\imageres_00208.ico" />
+    <Resource Include="Icon\important.png" />
+    <Resource Include="Icon\imput_device_.png" />
+    <Resource Include="Icon\inbox.png" />
+    <Resource Include="Icon\info.png" />
+    <Resource Include="Icon\internet&amp;networking.png" />
+    <Resource Include="Icon\internet.png" />
+    <Resource Include="Icon\irc_protocol.png" />
+    <Resource Include="Icon\irkick.png" />
+    <Resource Include="Icon\irkickflash.png" />
+    <Resource Include="Icon\irkickoff.png" />
+    <Resource Include="Icon\Iskat.png" />
+    <Resource Include="Icon\itunes2aqua.png" />
+    <Resource Include="Icon\jabber_protocol.png" />
+    <Resource Include="Icon\java.png" />
+    <Resource Include="Icon\kaddressbook.png" />
+    <Resource Include="Icon\kalarm.png" />
+    <Resource Include="Icon\kalarm_disabled.png" />
+    <Resource Include="Icon\kappfinder.png" />
+    <Resource Include="Icon\kasteroids.png" />
+    <Resource Include="Icon\katomic.png" />
+    <Resource Include="Icon\katuberling.png" />
+    <Resource Include="Icon\kbackgammon_engine.png" />
+    <Resource Include="Icon\kbemusedsrv.png" />
+    <Resource Include="Icon\kblackbox.png" />
+    <Resource Include="Icon\kbounce.png" />
+    <Resource Include="Icon\kbtobexclient.png" />
+    <Resource Include="Icon\kbtserialchat.png" />
+    <Resource Include="Icon\kcalc.png" />
+    <Resource Include="Icon\kcmdevices.png" />
+    <Resource Include="Icon\kcmdf.png" />
+    <Resource Include="Icon\kcmkicker.png" />
+    <Resource Include="Icon\kcmkwm.png" />
+    <Resource Include="Icon\kcmmidi.png" />
+    <Resource Include="Icon\kcmpartitions.png" />
+    <Resource Include="Icon\kcmpci.png" />
+    <Resource Include="Icon\kcmsound.png" />
+    <Resource Include="Icon\kcmsystem.png" />
+    <Resource Include="Icon\kcmx.png" />
+    <Resource Include="Icon\kcoloredit.png" />
+    <Resource Include="Icon\kcontrol.png" />
+    <Resource Include="Icon\kdebluetooth.png" />
+    <Resource Include="Icon\kded.png" />
+    <Resource Include="Icon\kdeprintfax.png" />
+    <Resource Include="Icon\kdevelop.png" />
+    <Resource Include="Icon\kdevelop_down.png" />
+    <Resource Include="Icon\kdf.png" />
+    <Resource Include="Icon\kdisknav.png" />
+    <Resource Include="Icon\kdmconfig.png" />
+    <Resource Include="Icon\kdvi.png" />
+    <Resource Include="Icon\kedit.png" />
+    <Resource Include="Icon\keditbookmarks.png" />
+    <Resource Include="Icon\kenolaba.png" />
+    <Resource Include="Icon\kfax.png" />
+    <Resource Include="Icon\kfilereplace.png" />
+    <Resource Include="Icon\kfind.png" />
+    <Resource Include="Icon\kfloppy.png" />
+    <Resource Include="Icon\kfm.png" />
+    <Resource Include="Icon\kfm_home.png" />
+    <Resource Include="Icon\kfouleggs.png" />
+    <Resource Include="Icon\kget.png" />
+    <Resource Include="Icon\kghostview.png" />
+    <Resource Include="Icon\kgoldrunner.png" />
+    <Resource Include="Icon\kgpg.png" />
+    <Resource Include="Icon\khelpcenter.png" />
+    <Resource Include="Icon\kicker.png" />
+    <Resource Include="Icon\kjobviewer.png" />
+    <Resource Include="Icon\kjumpingcube.png" />
+    <Resource Include="Icon\klaptop.png" />
+    <Resource Include="Icon\klaptopdaemon.png" />
+    <Resource Include="Icon\klines.png" />
+    <Resource Include="Icon\klipper.png" />
+    <Resource Include="Icon\klipper_doc.png" />
+    <Resource Include="Icon\klipper_dock.png" />
+    <Resource Include="Icon\kllckety.png" />
+    <Resource Include="Icon\klpq.png" />
+    <Resource Include="Icon\kmahjongg.png" />
+    <Resource Include="Icon\kmenu.png" />
+    <Resource Include="Icon\kmenuedit.png" />
+    <Resource Include="Icon\kmines.png" />
+    <Resource Include="Icon\kmix.png" />
+    <Resource Include="Icon\kmixdocked_error.png" />
+    <Resource Include="Icon\kmixdocked_mute.png" />
+    <Resource Include="Icon\kmousetool.png" />
+    <Resource Include="Icon\knetconfig.png" />
+    <Resource Include="Icon\knewsticker.png" />
+    <Resource Include="Icon\knewstuff.png" />
+    <Resource Include="Icon\knode.png" />
+    <Resource Include="Icon\knotes.png" />
+    <Resource Include="Icon\knotify.png" />
+    <Resource Include="Icon\kolf.png" />
+    <Resource Include="Icon\konqsidebar_mediaplayer.png" />
+    <Resource Include="Icon\konqsidebar_news.png" />
+    <Resource Include="Icon\konqueror.png" />
+    <Resource Include="Icon\konquest.png" />
+    <Resource Include="Icon\konsole.png" />
+    <Resource Include="Icon\kontact.png" />
+    <Resource Include="Icon\konverter.png" />
+    <Resource Include="Icon\kopete.png" />
+    <Resource Include="Icon\korganizer.png" />
+    <Resource Include="Icon\kpackage.png" />
+    <Resource Include="Icon\kpat.png" />
+    <Resource Include="Icon\kpersonalizer.png" />
+    <Resource Include="Icon\kpilot.png" />
+    <Resource Include="Icon\kpoker.png" />
+    <Resource Include="Icon\kppp.png" />
+    <Resource Include="Icon\kpresenter.png" />
+    <Resource Include="Icon\krdc.png" />
+    <Resource Include="Icon\kreversi.png" />
+    <Resource Include="Icon\krfb.png" />
+    <Resource Include="Icon\ksame.png" />
+    <Resource Include="Icon\kservices.png" />
+    <Resource Include="Icon\kshisen.png" />
+    <Resource Include="Icon\ksirtet.png" />
+    <Resource Include="Icon\ksmiletris.png" />
+    <Resource Include="Icon\ksnake.png" />
+    <Resource Include="Icon\ksnapshot.png" />
+    <Resource Include="Icon\ksokoban.png" />
+    <Resource Include="Icon\kspaceduel.png" />
+    <Resource Include="Icon\kspread.png" />
+    <Resource Include="Icon\kstars.png" />
+    <Resource Include="Icon\ksysguard.png" />
+    <Resource Include="Icon\ksysv.png" />
+    <Resource Include="Icon\kterm.png" />
+    <Resource Include="Icon\ktimer.png" />
+    <Resource Include="Icon\ktip.png" />
+    <Resource Include="Icon\ktron.png" />
+    <Resource Include="Icon\kudesigner.png" />
+    <Resource Include="Icon\kuser.png" />
+    <Resource Include="Icon\kview.png" />
+    <Resource Include="Icon\kviewshell.png" />
+    <Resource Include="Icon\kwallet.png" />
+    <Resource Include="Icon\kwalletmanager.png" />
+    <Resource Include="Icon\kweather.png" />
+    <Resource Include="Icon\kwikdisk.png" />
+    <Resource Include="Icon\kwin.png" />
+    <Resource Include="Icon\kxconfig.png" />
+    <Resource Include="Icon\kxkb.png" />
+    <Resource Include="Icon\laptop_battery.png" />
+    <Resource Include="Icon\lassists.png" />
+    <Resource Include="Icon\launch.png" />
+    <Resource Include="Icon\licker.png" />
+    <Resource Include="Icon\licq.png" />
+    <Resource Include="Icon\linguist.png" />
+    <Resource Include="Icon\linneighborhood copy---.png" />
+    <Resource Include="Icon\linneighborhood.png" />
+    <Resource Include="Icon\linphone.png" />
+    <Resource Include="Icon\linuxconf.png" />
+    <Resource Include="Icon\lin_agt_wrench.png" />
+    <Resource Include="Icon\llaunch.png" />
+    <Resource Include="Icon\locale.png" />
+    <Resource Include="Icon\lockstart_session.png" />
+    <Resource Include="Icon\Login Manager.png" />
+    <Resource Include="Icon\logout.png" />
+    <Resource Include="Icon\looknfeel.png" />
+    <Resource Include="Icon\lphoto.png" />
+    <Resource Include="Icon\lsongs.png" />
+    <Resource Include="Icon\magic8ball.png" />
+    <Resource Include="Icon\mail.png" />
+    <Resource Include="Icon\mailappt.png" />
+    <Resource Include="Icon\mailreminder.png" />
+    <Resource Include="Icon\mail_delete.png" />
+    <Resource Include="Icon\mail_find.png" />
+    <Resource Include="Icon\mail_forward.png" />
+    <Resource Include="Icon\mail_generic.png" />
+    <Resource Include="Icon\mail_get.png" />
+    <Resource Include="Icon\mail_new.png" />
+    <Resource Include="Icon\mail_post_to.png" />
+    <Resource Include="Icon\mail_replay.png" />
+    <Resource Include="Icon\mail_replayall.png" />
+    <Resource Include="Icon\mail_reply.png" />
+    <Resource Include="Icon\mail_replyall.png" />
+    <Resource Include="Icon\mail_send.png" />
+    <Resource Include="Icon\Material icons Negative-04-06.png" />
+    <Resource Include="Icon\Material icons Negative-04-96.png" />
+    <Resource Include="Icon\messagebox_critical.png" />
+    <Resource Include="Icon\messagebox_info.png" />
+    <Resource Include="Icon\messagebox_warning.png" />
+    <Resource Include="Icon\misc.png" />
+    <Resource Include="Icon\miscellaneous.png" />
+    <Resource Include="Icon\money.png" />
+    <Resource Include="Icon\month.png" />
+    <Resource Include="Icon\mouse.png" />
+    <Resource Include="Icon\mp3.png" />
+    <Resource Include="Icon\multimedia.png" />
+    <Resource Include="Icon\multimedia2.png" />
+    <Resource Include="Icon\multiple_monitors.png" />
+    <Resource Include="Icon\musicstore.png" />
+    <Resource Include="Icon\mycomputer.png" />
+    <Resource Include="Icon\mydocuments.png" />
+    <Resource Include="Icon\mymac.png" />
+    <Resource Include="Icon\my_documents.png" />
+    <Resource Include="Icon\netjaxer.png" />
+    <Resource Include="Icon\netscape.png" />
+    <Resource Include="Icon\Network Connection Manager.png" />
+    <Resource Include="Icon\network.png" />
+    <Resource Include="Icon\networksettings.png" />
+    <Resource Include="Icon\New Mail.png" />
+    <Resource Include="Icon\new window.png" />
+    <Resource Include="Icon\newfont.png" />
+    <Resource Include="Icon\new_window.png" />
+    <Resource Include="Icon\next.png" />
+    <Resource Include="Icon\no.png" />
+    <Resource Include="Icon\no3d.png" />
+    <Resource Include="Icon\noatun.png" />
+    <Resource Include="Icon\ok.png" />
+    <Resource Include="Icon\openofficeorg-20-base.png" />
+    <Resource Include="Icon\openofficeorg-20-calc.png" />
+    <Resource Include="Icon\openofficeorg-20-draw.png" />
+    <Resource Include="Icon\openofficeorg-20-impress.png" />
+    <Resource Include="Icon\openofficeorg-20-math.png" />
+    <Resource Include="Icon\openofficeorg-20-writer.png" />
+    <Resource Include="Icon\openofficeorg-20.png" />
+    <Resource Include="Icon\openterm.png" />
+    <Resource Include="Icon\organizer.png" />
+    <Resource Include="Icon\os-support.png" />
+    <Resource Include="Icon\outbox.png" />
+    <Resource Include="Icon\outbox1.png" />
+    <Resource Include="Icon\package.png" />
+    <Resource Include="Icon\package_development.png" />
+    <Resource Include="Icon\package_editors.png" />
+    <Resource Include="Icon\package_editorspackage_editors.png" />
+    <Resource Include="Icon\package_edutainment.png" />
+    <Resource Include="Icon\package_favorite.png" />
+    <Resource Include="Icon\package_games.png" />
+    <Resource Include="Icon\package_games_arcade.png" />
+    <Resource Include="Icon\package_games_board.png" />
+    <Resource Include="Icon\package_games_card.png" />
+    <Resource Include="Icon\package_games_kids.png" />
+    <Resource Include="Icon\package_games_strategy.png" />
+    <Resource Include="Icon\package_graphics.png" />
+    <Resource Include="Icon\package_multimedia.png" />
+    <Resource Include="Icon\package_network.png" />
+    <Resource Include="Icon\package_programs.png" />
+    <Resource Include="Icon\package_settings.png" />
+    <Resource Include="Icon\package_system.png" />
+    <Resource Include="Icon\package_utilities.png" />
+    <Resource Include="Icon\package_wordprocessing.png" />
+    <Resource Include="Icon\palm.png" />
+    <Resource Include="Icon\parallels.png" />
+    <Resource Include="Icon\password.png" />
+    <Resource Include="Icon\penguin.png" />
+    <Resource Include="Icon\personal.png" />
+    <Resource Include="Icon\php.png" />
+    <Resource Include="Icon\phppg.png" />
+    <Resource Include="Icon\player-end.png" />
+    <Resource Include="Icon\player_eject.png" />
+    <Resource Include="Icon\player_end.png" />
+    <Resource Include="Icon\player_end1.png" />
+    <Resource Include="Icon\player_fwd.png" />
+    <Resource Include="Icon\player_pause.png" />
+    <Resource Include="Icon\player_play.png" />
+    <Resource Include="Icon\player_rew.png" />
+    <Resource Include="Icon\player_start.png" />
+    <Resource Include="Icon\player_stop.png" />
+    <Resource Include="Icon\player_time.png" />
+    <Resource Include="Icon\player_volume.png" />
+    <Resource Include="Icon\playlist.png" />
+    <Resource Include="Icon\playsound.png" />
+    <Resource Include="Icon\pppoeconfig.png" />
+    <Resource Include="Icon\previous.png" />
+    <Resource Include="Icon\printer.png" />
+    <Resource Include="Icon\printer1.png" />
+    <Resource Include="Icon\printmgr.png" />
+    <Resource Include="Icon\project_open.png" />
+    <Resource Include="Icon\queue.png" />
+    <Resource Include="Icon\quicktime.png" />
+    <Resource Include="Icon\quick_restart.png" />
+    <Resource Include="Icon\rebuild.png" />
+    <Resource Include="Icon\redo.png" />
+    <Resource Include="Icon\reload.png" />
+    <Resource Include="Icon\reload_all_tabs.png" />
+    <Resource Include="Icon\reload_page.png" />
+    <Resource Include="Icon\remote.png" />
+    <Resource Include="Icon\restart-1.png" />
+    <Resource Include="Icon\restart.png" />
+    <Resource Include="Icon\revert.png" />
+    <Resource Include="Icon\run.png" />
+    <Resource Include="Icon\runit.png" />
+    <Resource Include="Icon\runprog.png" />
+    <Resource Include="Icon\samba.png" />
+    <Resource Include="Icon\save_all.png" />
+    <Resource Include="Icon\scanner.png" />
+    <Resource Include="Icon\search.png" />
+    <Resource Include="Icon\server.png" />
+    <Resource Include="Icon\Service Manager.png" />
+    <Resource Include="Icon\Session Manager.png" />
+    <Resource Include="Icon\seyon.png" />
+    <Resource Include="Icon\sharemanager.png" />
+    <Resource Include="Icon\shutdown.png" />
+    <Resource Include="Icon\signature.png" />
+    <Resource Include="Icon\skype.png" />
+    <Resource Include="Icon\sms.png" />
+    <Resource Include="Icon\smserver.png" />
+    <Resource Include="Icon\software-development.png" />
+    <Resource Include="Icon\softwareD.png" />
+    <Resource Include="Icon\starthere.png" />
+    <Resource Include="Icon\Startup Wizard.png" />
+    <Resource Include="Icon\status_unknown.png" />
+    <Resource Include="Icon\stop.png" />
+    <Resource Include="Icon\style.png" />
+    <Resource Include="Icon\stylesheet.png" />
+    <Resource Include="Icon\switchuser.png" />
+    <Resource Include="Icon\synaptic.png" />
+    <Resource Include="Icon\SyncCenter_00001.ico" />
+    <Resource Include="Icon\SyncCenter_00005.ico" />
+    <Resource Include="Icon\systemsettings.png" />
+    <Resource Include="Icon\systemtray.png" />
+    <Resource Include="Icon\tab.png" />
+    <Resource Include="Icon\tab_duplicate.png" />
+    <Resource Include="Icon\tab_new.png" />
+    <Resource Include="Icon\tab_new_r-----.png" />
+    <Resource Include="Icon\tab_new_raised.png" />
+    <Resource Include="Icon\tab_remove.png" />
+    <Resource Include="Icon\terminal.png" />
+    <Resource Include="Icon\thumbnail.png" />
+    <Resource Include="Icon\thunderbird.png" />
+    <Resource Include="Icon\tm.ico" />
+    <Resource Include="Icon\todo.png" />
+    <Resource Include="Icon\toggle_log.png" />
+    <Resource Include="Icon\Top.png" />
+    <Resource Include="Icon\top1.png" />
+    <Resource Include="Icon\trash.png" />
+    <Resource Include="Icon\tux.png" />
+    <Resource Include="Icon\undo.png" />
+    <Resource Include="Icon\unlock.png" />
+    <Resource Include="Icon\up.png" />
+    <Resource Include="Icon\utilities.png" />
+    <Resource Include="Icon\vcalendar.png" />
+    <Resource Include="Icon\viewmag+.png" />
+    <Resource Include="Icon\viewmag-.png" />
+    <Resource Include="Icon\viewmag.png" />
+    <Resource Include="Icon\viewmag1.png" />
+    <Resource Include="Icon\viewmagfit.png" />
+    <Resource Include="Icon\view_bottom.png" />
+    <Resource Include="Icon\view_choose.png" />
+    <Resource Include="Icon\view_detailed.png" />
+    <Resource Include="Icon\view_icon.png" />
+    <Resource Include="Icon\view_left_right.png" />
+    <Resource Include="Icon\view_multicolumn.png" />
+    <Resource Include="Icon\view_remove.png" />
+    <Resource Include="Icon\view_remove2.png" />
+    <Resource Include="Icon\view_right.png" />
+    <Resource Include="Icon\view_right_p.png" />
+    <Resource Include="Icon\view_sidetree.png" />
+    <Resource Include="Icon\view_text.png" />
+    <Resource Include="Icon\view_top_bottom.png" />
+    <Resource Include="Icon\view_tree.png" />
+    <Resource Include="Icon\virussafe.png" />
+    <Resource Include="Icon\voice-support.png" />
+    <Resource Include="Icon\Volume Manager.png" />
+    <Resource Include="Icon\web.png" />
+    <Resource Include="Icon\webexport.png" />
+    <Resource Include="Icon\wifi.png" />
+    <Resource Include="Icon\window_fullscreen.png" />
+    <Resource Include="Icon\window_list.png" />
+    <Resource Include="Icon\window_new.png" />
+    <Resource Include="Icon\window_nofullscreen.png" />
+    <Resource Include="Icon\wine.png" />
+    <Resource Include="Icon\wizard.png" />
+    <Resource Include="Icon\x.png" />
+    <Resource Include="Icon\xapp.png" />
+    <Resource Include="Icon\xcalc.png" />
+    <Resource Include="Icon\xclock.png" />
+    <Resource Include="Icon\xconsole.png" />
+    <Resource Include="Icon\xfmail.png" />
+    <Resource Include="Icon\xine.png" />
+    <Resource Include="Icon\xmag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\compstui_00006.ico" />
+    <Resource Include="Icon\compstui_00007.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Safari.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Safari.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\wifi_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\FrequencyBase1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\FrequencyBase2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ExportSmall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMLSS">
+      <Guid>{C21E9CE5-B317-463B-A1B1-B5E36EED59D0}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Carrier1.ico" />
+    <Resource Include="Icon\Carrier2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\HeightTmp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\LoginBg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="baiDuMap.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Icon\SendMessage.ico" />
+    <Resource Include="Icon\SendMessage.png" />
+    <Resource Include="Icon\edit_add.ico" />
+    <Resource Include="Icon\edit_adjust.ico" />
+    <Resource Include="Icon\edit_adust.png" />
+    <Resource Include="Icon\rename_ok.ico" />
+    <Resource Include="Icon\Problem_ok.ico" />
+    <Resource Include="Icon\in_0.ico" />
+    <Resource Include="Icon\in_1.ico" />
+    <Resource Include="Icon\in_2.ico" />
+    <Resource Include="Icon\in_3.ico" />
+    <Resource Include="Icon\flashlight.png" />
+    <Resource Include="Icon\ErrorStatu.ico" />
+    <Resource Include="Icon\Ok.ico" />
+    <Resource Include="Icon\Problem.ico" />
+    <Resource Include="Icon\textfile.ico" />
+    <Resource Include="Icon\unkown.ico" />
+    <Resource Include="Icon\rar.ico" />
+    <Resource Include="Icon\map.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

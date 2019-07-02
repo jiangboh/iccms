@@ -1,0 +1,47 @@
+﻿<Window x:Class="iccms.SubWindow.UpDownLoadFilesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.SubWindow"
+        mc:Ignorable="d"
+        Icon="..\icon\Safari.ico"
+        Name="FrmUpDownLoadFileAndTiptoolBar"
+        Title="{Binding Title}" 
+        Height="60" Width="300"
+        Topmost="True"
+        WindowState="Normal"
+        WindowStyle="None"
+        WindowStartupLocation="Manual"
+        AllowsTransparency="True"
+        BorderThickness="2"
+        Background="{StaticResource ResourceKey=WindowBrushSubDialog}"
+        Loaded="FrmUpDownLoadFileAndTiptoolBar_Loaded"
+        MouseMove="FrmUpDownLoadFileAndTiptoolBar_MouseMove">
+
+    <Grid>
+        <Grid Name="UploadWin" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Name="lblUploadTitle" Grid.Row="0" Content="正在上传文件请稍后......"></Label>
+            <ProgressBar Name="UploadProgressBar" Grid.Row="1" Value="{Binding StepValue}" Maximum="{Binding MaxValue}" />
+        </Grid>
+        <Grid Name="DownloadWin" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Name="lblDownloadTitle" Grid.Row="0" Content="正在下载文件请稍后......"></Label>
+            <ProgressBar Name="DownloadProgressBar" Grid.Row="2"></ProgressBar>
+        </Grid>
+        <Grid Name="TipsWin" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Name="lblTips" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center"></Label>
+        </Grid>
+    </Grid>
+</Window>

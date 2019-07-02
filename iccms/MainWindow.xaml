@@ -1,0 +1,198 @@
+<Window x:Class="iccms.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:iccms" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d"
+        
+        Title="{Binding Title}" 
+        Width="1024" 
+        Height="768" 
+        Name="MainWindowFrm" 
+        AllowsTransparency="False" 
+        Background="{x:Null}" 
+        Closed="Window_Closed" Closing="Window_Closing" 
+        FontFamily="Default" FontSize="14" Icon="icon\Safari.ico" 
+        Loaded="FrmMainWindow_Loaded" 
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Maximized">
+
+    <Border Name="MainWinBody" Visibility="Visible" Background="{StaticResource WindowBrush}">
+        <Grid Name="MainWinGrid" Margin="0,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228" />
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="155" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3" />
+                <RowDefinition Height="180" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <!--  菜单栏目  -->
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="{StaticResource MainMenuBrush}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Frame Name="MenuFram" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Transparent" NavigationUIVisibility="Hidden" />
+                    <Border Grid.Row="1" Grid.Column="1" CornerRadius="10,10,10,10" Height="25" Background="{StaticResource ToolBarBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="105"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Name="lblDeviceManage" Grid.Row="0" Grid.Column="0" FontSize="12" Content="设备管理" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblDeviceManage_PreviewMouseLeftButtonDown"></Label>
+                            <Label Name="lblNameListManage" Grid.Row="0" Grid.Column="1" FontSize="12" Content="特殊名单管理" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblNameListManage_PreviewMouseLeftButtonDown"></Label>
+                            <Label Name="lblMapManage" Grid.Row="0" Grid.Column="2" FontSize="12" Content="地图显示" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblMapManage_PreviewMouseLeftButtonDown"></Label>
+                            <Label Name="lblStatisticalManage" Grid.Row="0" Grid.Column="3" FontSize="12" Content="统计信息" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblStatisticalManage_PreviewMouseLeftButtonDown"></Label>
+                            <Label Name="lblDomainManage" Grid.Row="0" Grid.Column="4" FontSize="12" Content="域管理" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblDomainManage_PreviewMouseLeftButtonDown"></Label>
+                            <Label Name="lblDataManage" Grid.Row="0" Grid.Column="5" FontSize="12" Content="历史记录" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblDataManage_PreviewMouseLeftButtonDown"></Label>
+                            <Label Name="lblConfiguration" Grid.Row="0" Grid.Column="6" FontSize="12" Content="选项" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToolBarElementStyle}" PreviewMouseLeftButtonDown="lblConfiguration_PreviewMouseLeftButtonDown"></Label>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!--  退出  -->
+            <Button Name="btnClose" Grid.Row="0" Grid.Column="3" Width="95" Height="35" Background="Transparent" Click="btnClose_Click" Cursor="Hand" Visibility="Hidden">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="32" />
+                            </Grid.ColumnDefinitions>
+                            <Label Name="btnClose" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalContentAlignment="Center" Content="{Binding MExit}" Cursor="Hand" FontSize="14" />
+                            <Image Grid.Row="0" Grid.Column="1" Width="32" Height="32" Source="Icon\aim_protocol.png" />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!--  设备导航列表  -->
+            <Border Name="DeviceListWindow" Grid.Row="1" Grid.Column="0" Background="{StaticResource DeviceTreeListBrush}" BorderBrush="{StaticResource DataModuleBorderStyle}" BorderThickness="1" Visibility="Visible" Margin="5,5,2.5,2.5">
+                <Grid ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Frame Name="DeviceListBarFram" Grid.Row="0" Grid.Column="0" NavigationUIVisibility="Hidden" />
+                    <Frame Name="DeviceListLoadingStatuFram" Grid.Row="0" Grid.Column="0" NavigationUIVisibility="Hidden" Visibility="{Binding LoadingWindowStatu}" />
+                </Grid>
+            </Border>
+
+            <!--  左右移动线  -->
+            <GridSplitter Name="DeviceListWindowResizeLine" Grid.Row="1" Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="{StaticResource GridSplitterStyle}" Margin="0 5 0 0"/>
+
+            <!--  UE数据显示  -->
+            <Border Name="UEInfoWindow" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" BorderBrush="{StaticResource DataModuleBorderStyle}" BorderThickness="1" Visibility="{Binding UeInfoWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2.5 5 5 2.5">
+                <Grid ShowGridLines="False">
+                    <Frame Name="UEDataFram" NavigationUIVisibility="Hidden" />
+                </Grid>
+            </Border>
+
+            <!--  上下移动线  -->
+            <GridSplitter Name="SystemLogsWindowResizeLine" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Height="3" HorizontalAlignment="Stretch" Background="{StaticResource GridSplitterStyle}" Visibility="{Binding SystemLogsMoveBar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5 0 5 0"/>
+
+            <!--  日志信息  -->
+            <Border Name="SystemLogsWindow" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Background="{StaticResource SystemLogsWindowBrush}" BorderBrush="{StaticResource DataModuleBorderStyle}" BorderThickness="1" Visibility="{Binding SystemLogsWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5,2.5,4,5">
+                <Grid>
+                    <Frame Name="SysLogDataFram" NavigationUIVisibility="Hidden" />
+                </Grid>
+            </Border>
+
+            <!--  状态栏  -->
+            <Border Name="SystemStatusBar" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" BorderBrush="{StaticResource DataModuleBorderStyle}" BorderThickness="1" Visibility="Visible" Background="{StaticResource SummaryBarWinStyle}" Margin="5 0 5 0" CornerRadius="5,5,5,5">
+                <Grid ShowGridLines="False">
+                    <StatusBar Name="MainStatusBar" Background="Transparent">
+                        <StatusBarItem>
+                            <TextBlock Name="txtWelcome" Text="{Binding Welcome}" Foreground="{StaticResource WelcomeStyle}"/>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <TextBlock Text="   " />
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <TextBlock Name="txtLoginUserNameCaption" Text="当前用户：" Foreground="{StaticResource SummaryBarCaptionStyle}" HorizontalAlignment="Right"/>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Border Background="{StaticResource SearchBarEdit}" CornerRadius="8,8,8,8">
+                                <Grid>
+                                    <TextBox Name="txtLoginUserNameValue" Width="105" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="{StaticResource SearchBarText}" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True" Text="{Binding LoginUser}" />
+                                </Grid>
+                            </Border>
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <TextBlock Name="txtStationTotalCaption" Text="站点总数：" Foreground="{StaticResource SummaryBarCaptionStyle}" HorizontalAlignment="Right"/>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Border Background="{StaticResource SearchBarEdit}" CornerRadius="8,8,8,8">
+                                <TextBox Name="txtStationTotal" Width="50" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="{StaticResource SearchBarText}" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True" Text="{Binding StationTotal}" />
+                            </Border>
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <TextBlock Name="txtDeviceTotalCaption" Text="设备总数：" Foreground="{StaticResource SummaryBarCaptionStyle}" HorizontalAlignment="Right"/>
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <Border Background="{StaticResource SearchBarEdit}" CornerRadius="8,8,8,8">
+                                <TextBox Name="txtDeviceTotal" Width="50" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="{StaticResource SearchBarText}" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True" Text="{Binding DeviceTotal}" />
+                            </Border>
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <TextBlock Name="txtDeviceOnlineTotalCaption" Text="设备在线总数：" Foreground="{StaticResource SummaryBarCaptionStyle}" HorizontalAlignment="Right"/>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Border Background="{StaticResource SearchBarEdit}" CornerRadius="8,8,8,8">
+                                <TextBox Name="txtDeviceOnlineTotal" Width="50" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="{StaticResource SearchBarText}" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True" Text="{Binding DeviceOnlineTotal}" />
+                            </Border>
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <TextBlock Name="txtSysLogsListCaption" Text="日志总数：" Foreground="{StaticResource SummaryBarCaptionStyle}" HorizontalAlignment="Right"/>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Border Background="{StaticResource SearchBarEdit}" CornerRadius="8,8,8,8">
+                                <TextBox Name="txtSysLogsListTotal" Width="95" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="{StaticResource SearchBarText}" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True" Text="{Binding SysLogsTotal}" />
+                            </Border>
+                        </StatusBarItem>
+
+                        <StatusBarItem>
+                            <TextBlock Name="txtScannerTotalCaption" Text="捕号上报：" Foreground="{StaticResource SummaryBarCaptionStyle}" HorizontalAlignment="Right"/>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Border Background="{StaticResource SearchBarEdit}" CornerRadius="8,8,8,8">
+                                <TextBox Name="txtScannerTotal" Width="125" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="{StaticResource SearchBarText}" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True" Text="{Binding ReportTotal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </Border>
+                        </StatusBarItem>
+                    </StatusBar>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="iccms.UnKnownDeviceListsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms"
+        mc:Ignorable="d"
+        Title="UnKnownDeviceListsWindow" 
+        Height="75"
+        Width="75"
+        WindowState="Normal"
+        WindowStyle="None"
+        Topmost="True"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" 
+        Background="{x:Null}"        
+        VerticalAlignment="Center"
+        VerticalContentAlignment="Center"
+        MouseMove="Window_MouseMove"
+        Loaded="Window_Loaded"
+        MouseDoubleClick="Window_MouseDoubleClick"
+        Closed="Window_Close"
+        ToolTip="系统中有新的未知设备">
+
+    <Border Width="Auto" Height="Auto" Background="Gray" BorderThickness="0" CornerRadius="37.5,37.5,37.5,37.5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Row="0" Grid.Column="0">
+                <Ellipse Name="DeviceTips" Grid.Row="0" Grid.Column="0" Stroke="Transparent" Width="75" Height="75" Cursor="Hand" ToolTip="系统有新的未知设备">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="0.2,0.8" RadiusX="0.75" RadiusY="0.75">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5">
+                                    </RotateTransform>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Color="Transparent" Offset="0"></GradientStop>
+                            <GradientStop Color="LightGreen" Offset="0"></GradientStop>
+                            <GradientStop Color="Green" Offset="0.487"></GradientStop>
+                            <GradientStop Color="Green" Offset="1"></GradientStop>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Name="ChangedElement" Grid.Column="0" Grid.Row="0" Width="{Binding ElementWidth}" Height="{Binding ElementHeight}" Opacity="{Binding ElementOpacity}" Cursor="Hand" ToolTip="系统有新的未知设备">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush >
+                            <GradientStop Color="AntiqueWhite" Offset="{Binding Zero}"/>
+                            <GradientStop Color="Red" Offset="{Binding StartColor}"/>
+                            <GradientStop Color="Gold" Offset="{Binding SecondColor}"/>
+                            <GradientStop Color="Orange" Offset="{Binding LastColor}"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>

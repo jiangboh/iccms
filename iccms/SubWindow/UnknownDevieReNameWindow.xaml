@@ -1,0 +1,67 @@
+﻿<Window x:Class="iccms.SubWindow.UnknownDevieReNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.SubWindow"
+        mc:Ignorable="d"
+        Title="重命名未知设备"
+        Height="200" Width="400"
+        AllowsTransparency="True" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        Background="{x:Null}"
+        Loaded="Window_Loaded" 
+        MouseMove="Window_MouseMove" 
+        KeyDown="Window_KeyDown"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrushDialog}" BorderBrush="#FF05FF54" BorderThickness="1" CornerRadius="10,10,10,10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblOverrideTips" Grid.Row="1" Grid.Column="0" Content="重名操作" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <CheckBox x:Name="chkOverrideTips" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Content="设备重名时覆盖 (谨慎操作)" IsChecked="{Binding NameOverride}" VerticalAlignment="Center"></CheckBox>
+
+            <Label x:Name="lblContent" Grid.Row="2" Grid.Column="0" Content="原设备名" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <TextBox x:Name="txtSourceName" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding UnknownSourceName}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" IsReadOnly="True" BorderBrush="LightGreen"></TextBox>
+
+            <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <RadioButton Name="rdbCustomDeviceName" GroupName="NewDeviceNameMode" Grid.Row="0" Grid.Column="0" IsChecked="{Binding SelectCustomInput}" Content="自定义" Width="75" Height="15" Click="rdbCustomDeviceName_Click"></RadioButton>
+                <RadioButton Name="rdbSourceDeviceList" GroupName="NewDeviceNameMode" Grid.Row="0" Grid.Column="1" Content="设备列表" IsChecked="{Binding SelectDeviceList}" Width="75" Height="15" Click="rdbSourceDeviceList_Click"></RadioButton>
+            </Grid>
+            <Label x:Name="lblDesContent" Grid.Row="4" Grid.Column="0" Content="新设备名" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox Name="txtNewName" Grid.Row="0" Grid.Column="0" Text="{Binding UnknownNewName}" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" Visibility="{Binding SelectedCustomEnable}" Background="{Binding Parent.BackGround}" BorderBrush="LightGreen"></TextBox>
+
+                <ComboBox Name="cbbNewName" Grid.Row="0" Grid.Column="0" Text="{Binding UnknownNewName}" DisplayMemberPath="SelfName" SelectedValuePath="SelfID" Visibility="{Binding SelectedListEnable}" Height="30" Style="{StaticResource ComboBoxStyle}" VerticalAlignment="Center" VerticalContentAlignment="Center" IsEditable="False" IsReadOnly="True" DropDownOpened="cbbNewName_DropDownOpened"></ComboBox>
+            </Grid>
+            <Button x:Name="btnEnter" Grid.Row="5" Grid.Column="2" Content="确定" VerticalAlignment="Center" Width="75" Height="30" Click="btnEnter_Click"/>
+            <Button x:Name="btnCansel" Grid.Row="5" Grid.Column="3" Content="取消" VerticalAlignment="Center" Width="75" Height="30" Click="btnCansel_Click"/>
+        </Grid>
+    </Border>
+</Window>

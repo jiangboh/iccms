@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0013)about:internet -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        p {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/RectangleZoom/1.2/src/RectangleZoom_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <title>地图展示</title>
+</head>
+<body>
+    <div id="allmap" style="width: 940px;height: 660px;"></div>
+    <div style=""width: 940px;height: 30px;">
+        <label>经度</label>
+        <span id="jing_du"></span>
+        <label>纬度</label>
+        <span id="wei_du"></span>
+    </div>
+    <div id="r-result">
+        <div class="optionpanel" style=""width: 900px;height: 30px;">
+            <label>选择主题</label>
+            <select id="stylelist" onchange="changeMapStyle(this.value)"></select>
+        </div>
+    </div>
+    <!--<div> <div onclick="addMarker()" class="button" style="margin: 5px;padding: 13px 23px;border-radius: 10px;box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);font: 16px/14px Tahoma, Verdana, sans-serif;text-align: center;color: #fefefe;background: #1e90ff;">确定</div></div>-->
+</body>
+</html>
+<script type="text/javascript" src="http://lbsyun.baidu.com/custom/stylelist.js"></script>
+<script type="text/javascript">
+    try
+    {     
+        //****百度API功能
+        var map = new BMap.Map("allmap", { enableMapClick: false });    // 创建Map实例
+        var tmplng = '';
+        var tmplat = '';
+        var MarkerTitle = '';
+        var IsStation = '';
+        var Des = '';
+        //地图上所有标注集合
+        var markers = [];
+        //IMSI轨迹
+        var IMSI = [];
+        //鼠标点击事件
+        var Existence = false;
+        //右键确认添加坐标
+        var setExistence = false;
+        //点聚合
+        //var markerClusterer = new BMapLib.MarkerClusterer(map, { markers: markers });
+
+        // 创建polyline对象
+        var polyline = new BMap.Polyline();
+
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        map.enableDragging();   //开启拖拽
+
+        //****根据IP定位城市
+        function myFun(result) {
+            var cityName = result.name;
+            //map.setCenter(cityName);
+            map.centerAndZoom(cityName);  // 初始化地图,设置中心点坐标和地图级别
+        }
+        var myCity = new BMap.LocalCity();
+        myCity.get(myFun);
+
+        //****根据坐标设置中心点和地图级别
+        function pointCollection(tmplng, tmplat) {
+            map.centerAndZoom(new BMap.Point(tmplng, tmplat), 14);
+        }
+
+        //****初始化模板选择的下拉框
+        var sel = document.getElementById('stylelist');
+        for (var key in mapstyles) {
+            var style = mapstyles[key];
+            var item = new Option(style.title, key);
+            sel.options.add(item);
+        }
+        //设置提示框的标题为站点名
+        function setMarkerTitle(name) {
+            MarkerTitle = name;
+        }
+        //****根据经纬度标注站点位置
+        function setStructureNodePoint(lng, lat, fullName) {   
+            var point = new BMap.Point(lng, lat);
+            var marker = new BMap.Marker(point);  // 创建标注
+            map.addOverlay(marker);
+            tmplng = lng;
+            tmplat = lat;            // 将标注添加到地图中
+            //marker.enableDragging();           // 可拖拽
+            //marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+            //markerCluster(lgt, lat); //聚合函数 
+            map.panTo(point);   //焦点移动指定的位置
+            marker.setTitle(fullName);
+            markers.push(marker);//标注存入到集合中
+            var opts = {
+                width: 70,     // 信息窗口宽度
+                height: 70,     // 信息窗口高度
+                title: "全名：" + fullName, // 信息窗口标题
+                enableMessage: true,//设置允许信息窗发送短息
+                message: ""
+            }
+            var infoWindow = new BMap.InfoWindow("经度：" + lng + "，纬度：" + lat, opts);  // 创建信息窗口对象
+            marker.addEventListener("click", function (e) {
+                map.openInfoWindow(infoWindow, point); //开启信息窗口
+            });
+            addContextMenu(lng, lat, marker, fullName);
+        }
+
+        //****返回鼠标最后一次点击的坐标
+        function getPoint(){
+            if (tmplat == null)
+                return null
+            var _tmplng = tmplng + "," + tmplat;
+            return _tmplng;
+        }
+
+        //单击获取点击的经纬度
+        map.addEventListener("click", function (e) {
+            if (e.overlay == null & Existence) {
+                deleteAllMarker();
+                var jing_du_value = e.point.lng;
+                var wei_du_value = e.point.lat;
+                var jing_du = document.getElementById("jing_du");
+                var wei_du = document.getElementById("wei_du");
+                jing_du.innerHTML = jing_du_value;
+                wei_du.innerHTML = wei_du_value;
+                tmplng = jing_du_value;
+                tmplat = wei_du_value;
+                var point = new BMap.Point(jing_du_value, wei_du_value);
+                var marker = new BMap.Marker(point);  // 创建标注
+                marker.setTitle("单机标注");
+                map.addOverlay(marker);
+                markers.push(marker);//每次点击都存入到集合中
+                addContextMenu(jing_du_value, wei_du_value, marker, "坐标经纬度");
+
+                var opts = {
+                    width: MarkerTitle.length + 6,     // 信息窗口宽度
+                    height: 70,     // 信息窗口高度
+                    title: MarkerTitle, // 信息窗口标题
+                    enableMessage: true,//设置允许信息窗发送短息
+                    message: ""
+                }
+                var infoWindow = new BMap.InfoWindow("经度：" + jing_du_value + "，纬度：" + wei_du_value, opts);  // 创建信息窗口对象
+                marker.addEventListener("click", function (e) {
+                    map.openInfoWindow(infoWindow, point); //开启信息窗口
+                });
+            }
+        });
+
+        //****点集合
+        function markerCluster(tmplng, tmplat) {
+            var pt = new BMap.Point(tmplng, tmplat);
+            var marker = new BMap.Marker(pt);
+            markers.push(marker);
+            marker.enableDragging();
+        }
+
+        function attribute(infoWindow, point) {
+            map.openInfoWindow(infoWindow, point); //开启信息窗口
+        }
+
+        function setIMSI(tmpname, tmplng, tmplat)
+        {
+            var pt = new BMap.Point(tmplng, tmplat);
+            var marker = new BMap.Marker(pt);
+            map.addOverlay(marker);
+            marker.setTitle(tmpname);
+            IMSI.push(marker)
+
+        }
+
+        //****--------添加折线和箭头
+        function addOverlays() {
+            var pois = [];
+            var sy = new BMap.Symbol(BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW, {
+                scale: 0.6,//图标缩放大小
+                strokeColor: '#fff',//设置矢量图标的线填充颜色
+                strokeWeight: '2'//设置线宽
+            });
+            var icons = new BMap.IconSequence(sy, '10', '30');
+            if (IMSI.length > 1) {
+                for (i = 0; i < IMSI.length; i++) {
+                    pois.push(IMSI[i].point);
+                }
+                polyline = new BMap.Polyline(pois, {
+                    enableEditing: false,//是否启用线编辑，默认为false
+                    enableClicking: true,//是否响应点击事件，默认为true
+                    icons: [icons],
+                    strokeWeight: '4',//折线的宽度，以像素为单位
+                    strokeOpacity: 1,//折线的透明度，取值范围0 - 1
+                    strokeColor: "#18a45b" //折线颜色
+                });
+                map.addOverlay(polyline);
+                //polyline.addEventListener("click", getAttr);
+                hidePolyLine();
+            }
+        }
+        function getAttr() {
+            var p = markers[0].getPosition();       //获取marker的位置
+            alert("marker的位置是" + p.lng + "," + p.lat);
+        }
+
+        //****清除覆盖物
+        function hidePolyLine() {
+            markers = [];
+            var pt = new BMap.Point(tmplng, tmplat);
+            var marker = new BMap.Marker(pt);
+            markers.push(marker);
+            marker.enableDragging();
+        }
+
+        //****删除指定标注
+        function deleteSelectMarker(tmplng, tmplat, title) {
+            for (var i = 0; i < markers.length; i++) {
+                if (markers[i].point.lat == tmplat & markers[i].point.lng == tmplng) {
+                    map.removeOverlay(markers[i]);  
+                    break;
+                }
+            }
+        }
+        //****添加站点
+        function addSelectMarker(_tmplng, _tmplat, title) {
+            tmplng = _tmplng;
+            tmplat = _tmplat;
+            var pt = new BMap.Point(_tmplng, _tmplat);
+            var opts = {
+                width: 200,     // 信息窗口宽度
+                height: 160,     // 信息窗口高度
+                title: '', // 信息窗口标题
+                enableMessage: true,//设置允许信息窗发送短息
+                message: ""
+            }
+            var infoWindow = new BMap.InfoWindow('<div> 是否站点 <input id="IsStation" name="" type="checkBox" class="" style="width: 30px;height: 30 px;"></div>'
+                + '<div> 域名 <input id="StationName" name="" type="text" class="" placeholder="请输入域名" required="required" style="width: 200px;height: 20px;"></div>'
+                + '<div> 描述 <input id="des" name="" type="text" class="" placeholder="请输入备注信息" required="required" style="width: 200px;height: 20px;"></div>'
+                + '<div> <div onclick="addMarker()" class="button" style="margin: 5px;padding: 13px 13px;border-radius: 10px;box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);font: 16px/14px Tahoma, Verdana, sans-serif;text-align: center;color: #fefefe;background: #1e90ff;">确定</div></div>'
+                +'<div/>',
+                opts);  // 创建信息窗口对象
+            map.openInfoWindow(infoWindow, pt); //开启信息窗口
+        }
+        function addMarker() {
+            var MarkerName = document.getElementById("StationName").value;
+            var isStation = document.getElementById("IsStation").checked;
+            var des = document.getElementById("des").value;
+            if (MarkerName != '') {
+
+                //MarkerTitle = MarkerName;
+                IsStation = isStation;
+                Des = des;
+            }
+            map.closeInfoWindow();
+        }
+
+        //****清除所有的标注
+        function deleteAllMarker() {
+            for (var i = 0; i < markers.length; i++) {
+                map.removeOverlay(markers[i]);
+            }
+            for (var i = 0; i < IMSI.length; i++) {
+                map.removeOverlay(IMSI[i]);
+            }
+            polyline.hide();
+            IMSI = [];
+            markers = [];
+        }
+
+        //****获取所有标注
+        function GetAllMarker() {
+            var _marker = "";
+            for (var i = 0; i < markers.length; i++) {
+                _marker += markers[i].point.lat + "," + markers[i].point.lng + "|";
+            }
+            return _marker;
+        }
+        //****增加右键功能
+        function addContextMenu(lng, lat, marker, fullName) {
+            var menu = new BMap.ContextMenu();
+            var txtMenuItem = [
+            
+            {
+                text: '添加站点坐标',
+                callback: function () {
+                    if (confirm("确定要添加站点吗？")) {
+                        setExistence = true;
+                        Existence = false;
+                        //addSelectMarker(lgt, lat, fullName);
+                    }
+                }
+            },
+            {
+                text: '修改站点坐标',
+                callback: function () {
+                    if (confirm("确定要修改站点吗？")) {
+                        Existence = true;
+                        //deleteSelectMarker(lgt, lat, fullName);
+                    }
+                }
+            }
+            ];
+            for (var i = 0; i < txtMenuItem.length; i++) {
+                menu.addItem(new BMap.MenuItem(txtMenuItem[i].text, txtMenuItem[i].callback, 100));
+            }
+            marker.addContextMenu(menu);//添加右键功能
+        }
+        //******获取当前坐标点和名字
+        function getPointInfo() {
+            if (tmplng != '' & tmplat != '' & setExistence) {
+                var _tmplng = tmplng;
+                var _tmplat = tmplat;
+                var _setExistence = setExistence;
+                setExistence = false;
+                tmplng = '';
+                tmplat = '';
+                return _tmplng + ',' + _tmplat + ',' + _setExistence;
+            }
+            return null;
+        }
+        //实时返回坐标
+        function getPoint() {
+            if (tmplng != '' & tmplat != '') {
+                var _tmplng = tmplng;
+                var _tmplat = tmplat;
+                return _tmplng + ',' + _tmplat;
+            }
+            return null;
+        }
+        //是否存在经纬度
+        function existenceLngLat(point) {
+            if(point){
+                Existence = false;
+            }
+            else {
+                Existence = true;
+            }
+        }
+    }
+    catch(e)
+    {
+        alert(e.message);
+    }
+</script>

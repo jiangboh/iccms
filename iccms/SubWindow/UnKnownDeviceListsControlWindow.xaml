@@ -1,0 +1,305 @@
+﻿<Window x:Class="iccms.SubWindow.UnKnownDeviceListsControlWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:TreeItemModel="clr-namespace:DataInterface;assembly=DataInterface" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:iccms.SubWindow" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        Title="UnKnownDeviceListsControlWindow" 
+        Width="850" 
+        Height="350" 
+        Topmost="False"
+        AllowsTransparency="True" 
+        Background="{x:Null}" Closed="Window_Closed" 
+        FontSize="14" 
+        KeyDown="Window_KeyDown" 
+        Loaded="Window_Loaded" 
+        MouseMove="Window_MouseMove"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"  
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Normal" 
+        WindowStyle="None" 
+        Closing="Window_Closing">
+
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrushSubDialog}" BorderBrush="#FF05FF54" BorderThickness="1" CornerRadius="10,10,10,10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <DataGrid Name="UnKnownDeviceListsGrid" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" Background="Transparent" CanUserAddRows="False" SelectedIndex="0" CanUserResizeColumns="False" FontSize="14" IsReadOnly="True" ItemsSource="{Binding}" SelectionMode="Single" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" CurrentCellChanged="UnKnownDeviceListsGrid_CurrentCellChanged" PreviewMouseDoubleClick="UnKnownDeviceListsGrid_PreviewMouseDoubleClick" MouseMove="UnKnownDeviceListsGrid_MouseMove">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Width="50" Binding="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="UnknownDeviceIsSelectedAll" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="UnknownDeviceIsSelectedAll_Click" IsChecked="{Binding IsSelectedAll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+
+                    <DataGridTextColumn Width="50" Binding="{Binding Path=ID}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtNumber" Text="序号" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn Width="165">
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="DataGridCell.IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Yellow" />
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </Trigger>
+
+                                    <Trigger Property="DataGridCell.IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTemplateColumn.CellStyle>
+
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Name="txtDeviceName" Text="设备名称" />
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="24" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Name="txtDeviceName" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Cursor="Hand" PreviewMouseLeftButtonDown="txtDeviceName_PreviewMouseLeftButtonDown" Text="{Binding Path=DeviceName}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Path=DeviceName}" MouseEnter="txtDeviceName_MouseEnter" />
+                                    <Image Name="imgDeviceName" Grid.Row="0" Grid.Column="1" Width="24" Height="24" VerticalAlignment="Center" Source="{Binding NodeIcon}" ToolTip="{Binding NodeIconTips}" />
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Width="145" Binding="{Binding Path=SN}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtDeviceSN" Text="SN" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Width="120" Binding="{Binding Path=IpAddr}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtDeviceIPAddr" Text="IP" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Width="65" Binding="{Binding Path=Port}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtDevicePort" Text="端口" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Width="120" Binding="{Binding Path=Netmask}" Visibility="Hidden">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtNetMask" Text="掩码" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Width="85" Binding="{Binding Path=Mode}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtDeviceMode" Text="制式" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn Width="135">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Name="txtStationName" Text="站点" />
+                        </DataGridTemplateColumn.Header>
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnSelectAPStation" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="24" />
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Row="0" Grid.Column="0" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center" Source="..\Icon\wifi.png" />
+                                                <Button Name="btnSelectAPStation" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="btnSelectAPStation_Click" Content="选择站点..." />
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="135">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Name="txtSelectedStionStatu" Text="站点设置状态" />
+                        </DataGridTemplateColumn.Header>
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnSelectAPStation" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="24" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Row="0" Grid.Column="0" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding StationStatuIcon}" ToolTip="{Binding ToStation}" />
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Width="50" Binding="{Binding Path=StationID}" Visibility="Hidden">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Name="txtStationID" Text="站点ID" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <ContextMenu.Background>
+                            <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                        </ContextMenu.Background>
+
+                        <MenuItem Name="mmUnknownDeviceAllSelected" Header="未知设备全选" Width="175" Height="30" Foreground="White" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Click="mmUnknownDeviceAllSelected_Click">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\apply.png" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+
+                        <MenuItem Name="mmUnknownDeviceAllUnSelected" Header="全部取消选择" Width="175" Height="30" Foreground="White" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Click="mmUnknownDeviceAllUnSelected_Click">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\drop.png" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+
+                        <MenuItem Name="mmUnknownDeviceDataReLoad" Header="重载未知设备" Width="175" Height="30" Foreground="White" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Click="mmUnknownDeviceDataReLoad_Click">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\quick_restart.png" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+
+                        <MenuItem Name="mmUnknownDeviceAllSameStation" Header="使用相同站点" Width="175" Height="30" Foreground="White" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Click="mmUnknownDeviceAllSameStation_Click">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\khelpcenter.png" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+
+                        <MenuItem Name="mmUnknownDeviceAllSameStationReset" Header="全部站点重置" Width="175" Height="30" Foreground="White" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Click="mmUnknownDeviceAllSameStationReset_Click">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\switchuser.png" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Height" Value="25" />
+                        <Setter Property="Background" Value="#FF215E21" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="25" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="Foreground" Value="Black" />
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White" />
+                </DataGrid.Resources>
+
+                <DataGrid.RowBackground>
+                    <ImageBrush ImageSource="{x:Null}" Opacity="1" />
+                </DataGrid.RowBackground>
+            </DataGrid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="95" />
+                    <ColumnDefinition Width="95" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <!--进度条-->
+                <Grid Name="ProgressBarBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Visibility="{Binding Enabled}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Name="lblProgressBarTips" Grid.Row="0" Grid.Column="0" Content="正在添加未知设备请稍后..." VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="{Binding TipsColor}"></Label>
+                    <ProgressBar Name="UnknownDeviceProgressBar" Grid.Row="1" Grid.Column="0" Height="21" Maximum="{Binding MaxValue}" Value="{Binding StepValue}"></ProgressBar>
+                </Grid>
+                <Button Name="btnEnter" Grid.Row="0" Grid.Column="3" Width="75" Height="30" Cursor="Hand" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Click="btnEnter_Click" Content="提交" />
+                <Button Name="btnCancel" Grid.Row="0" Grid.Column="4" Width="75" Height="30" Cursor="Hand" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Click="btnCancel_Click" Content="取消" />
+            </Grid>
+
+            <StatusBar Grid.Row="3" Grid.Column="1" Background="Transparent">
+                <StatusBarItem>
+                    <Label Width="Auto" Height="25" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="未知设备数:" />
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label Name="lblUnknownDeviceCount" Width="50" Height="25" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="Yellow" />
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label Name="lblUnknownDeviceCountUnit" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label Width="Auto" Height="25" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="提示：选择站点后，可以选用该站点下已存在的设备名称，否则输入新的设备名称作为新的设备名称。" />
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Border>
+</Window>

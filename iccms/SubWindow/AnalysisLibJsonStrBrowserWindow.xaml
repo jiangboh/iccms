@@ -1,0 +1,171 @@
+﻿<Window x:Class="iccms.SubWindow.AnalysisLibJsonStrBrowserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.SubWindow"
+        mc:Ignorable="d"
+        Title="AnalysisLibJsonStrBrowserWindow"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowState="Normal"
+        WindowStyle="None"
+        Height="450"
+        Width="600"
+        Topmost="True"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        MouseMove="Window_MouseMove"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrushSubDialog}" BorderThickness="0" CornerRadius="10,10,10,10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Name="lblTips" Grid.Row="0" Grid.Column="0" Content="数据信息异常列表" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"></Label>
+            <DataGrid Name="dgAnalysisJsonStrBox" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding}" Background="Transparent" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single" ScrollViewer.CanContentScroll="False" VirtualizingStackPanel.VirtualizationMode="Recycling" VirtualizingStackPanel.IsVirtualizing ="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="200" Binding="{Binding Path=DTime}" SortDirection="Descending" SortMemberPath="DTime">
+                        <DataGridTextColumn.Header>
+                            <Grid Name="gdRecvDataTime">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="txtRecvDataTime" Text="时间"></TextBlock>
+                            </Grid>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn Width="128">
+                        <DataGridTemplateColumn.Header>
+                            <Grid Name="gdBlockObject">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="txtJsonStrObject" Text="数据信息" TextTrimming="CharacterEllipsis" TextWrapping="Wrap"></TextBlock>
+                            </Grid>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="txtJsonStr" Text="{Binding Path=Object, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" Width="260" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="AliceBlue" MouseEnter="txtJsonStr_MouseEnter" MouseLeave="txtJsonStr_MouseLeave"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Width="155" Binding="{Binding Path=Action}">
+                        <DataGridTextColumn.Header>
+                            <Grid Name="gdBlockAction">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="txtBlockAction" Text="事件"></TextBlock>
+                            </Grid>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Width="125" Binding="{Binding Path=ErrorType}">
+                        <DataGridTextColumn.Header>
+                            <Grid Name="gdBlockOther">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="txtBlockOther" Text="错误类型"></TextBlock>
+                            </Grid>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn Width="125">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnJsonStrDelete" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Click="btnJsonStrDelete_Click">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Grid Background="Transparent">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="..\Icon\messagebox_critical.png" Grid.Column="0" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                                                <Label Content="删除" Height="30" Grid.Column="1" Width="75" HorizontalContentAlignment="Center" Foreground="AliceBlue" BorderBrush="AliceBlue" Background="DodgerBlue"></Label>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Height" Value="25" />
+                        <Setter Property="Background" Value="#FF215E21"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="Auto" />
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Transparent"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+                </DataGrid.Resources>
+
+                <DataGrid.RowBackground>
+                    <ImageBrush ImageSource="{x:Null}" Opacity="1"></ImageBrush>
+                </DataGrid.RowBackground>
+
+                <DataGrid.ContextMenu>
+                    <ContextMenu Name="pmBLMenuAction">
+
+                        <ContextMenu.Background>
+                            <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                        </ContextMenu.Background>
+
+                        <MenuItem Name="mmExport" Header="导出" Width="150" Height="30" Foreground="White" FontSize="14" Click="mmExport_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\Export.ico" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\BackGround\timg.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+                        <MenuItem Name="mmJsonStrClear" Header="清除" Width="150" Height="30" Foreground="White" FontSize="14" Click="mmJsonStrClear_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="Hand">
+                            <MenuItem.Icon>
+                                <Image Source="..\Icon\button_cancel.png" Width="16" Height="16"></Image>
+                            </MenuItem.Icon>
+                            <MenuItem.Background>
+                                <ImageBrush ImageSource="..\Icon\button_cancel.png" Opacity="0.3"></ImageBrush>
+                            </MenuItem.Background>
+                        </MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <TextBox Name="txtJsonStrContent" Grid.Row="2" Grid.Column="0" Text="{Binding JsonStr}" TextWrapping="Wrap" Background="Transparent" Foreground="AliceBlue" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderBrush="Orange" BorderThickness="1" CaretBrush="AliceBlue" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBox>
+            <Grid Grid.Row="3" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnClose" Grid.Row="0" Grid.Column="4" Width="75" Height="30" Content="关闭" Click="btnClose_Click"></Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,305 @@
+﻿<Window x:Class="iccms.NavigatePages.UserManageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iccms.NavigatePages"
+        mc:Ignorable="d"
+        Icon="..\icon\Safari.ico"
+        WindowStartupLocation="CenterScreen"
+        Background="{x:Null}"   
+        WindowState="Normal"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        KeyDown="Window_KeyDown"      
+        MouseMove="Window_MouseMove"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="{Binding AccountManagement}" 
+        Height="500" 
+        Width="600" 
+        ResizeMode="NoResize"  
+        Loaded="Window_Loaded"
+        Activated="FrmUserManager_Activated">
+    <Border Width="Auto" Height="Auto" Background="{StaticResource WindowBrush}" BorderBrush="#FF05FF54" BorderThickness="1" CornerRadius="10,10,10,10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TabControl x:Name="tabControl" Background="Transparent" Margin="5,5,5,5">
+                    <TabItem Header="{Binding user_AccountNumber}" Name="tiAccountNumber" Background="Transparent" Loaded="tiAccountNumber_Loaded">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <DataGrid x:Name="dgUserManage" Width="Auto" Background="Transparent" IsReadOnly="True" AutoGenerateColumns="False"  DataGridRow.MouseUp="DgUserManage_Click" SelectionMode="Single">
+                                    <!--<DataGrid.RowStyle>
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="Height" Value="25" />
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Style>
+                                    </DataGrid.RowStyle>
+                                    <DataGrid.ColumnHeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="Background" Value="DodgerBlue"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        </Style>
+                                    </DataGrid.ColumnHeaderStyle>-->
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Binding="{Binding Path=UserName}" Width="100">
+                                            <DataGridTextColumn.Header>
+                                                <TextBlock Name="txtUserName" Text="{Binding user_UserName}"></TextBlock>
+                                            </DataGridTextColumn.Header>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Binding="{Binding Path=RoleName}" Width="100">
+                                            <DataGridTextColumn.Header>
+                                                <TextBlock Name="txtUserGroup" Text="{Binding user_UserGroup}"></TextBlock>
+                                            </DataGridTextColumn.Header>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Binding="{Binding Path=user_Password}" Width="100">
+                                            <DataGridTextColumn.Header>
+                                                <TextBlock Name="txtUserPassword" Text="{Binding user_Password}"></TextBlock>
+                                            </DataGridTextColumn.Header>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Binding="{Binding Path=Des}" Width="100">
+                                            <DataGridTextColumn.Header>
+                                                <TextBlock Name="txtUserAlias" Text="{Binding user_Alias}"></TextBlock>
+                                            </DataGridTextColumn.Header>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Binding="{Binding Path=Manufacturer}" Width="190">
+                                            <DataGridTextColumn.Header>
+                                                <TextBlock Name="txtUserManufacturer" Text="{Binding user_Manufacturer}"></TextBlock>
+                                            </DataGridTextColumn.Header>
+                                        </DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                    <DataGrid.RowBackground>
+                                        <ImageBrush ImageSource="{x:Null}" Opacity="1"></ImageBrush>
+                                    </DataGrid.RowBackground>
+                                    <DataGrid.ColumnHeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="Background" Value="DodgerBlue"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        </Style>
+                                    </DataGrid.ColumnHeaderStyle>
+                                    <DataGrid.RowStyle>
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="Height" Value="Auto" />
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Style>
+                                    </DataGrid.RowStyle>
+                                    <DataGrid.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Transparent"/>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black"/>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+                                    </DataGrid.Resources>
+                                </DataGrid>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <TreeView x:Name="DeviceListTreeView" Background="Transparent">
+                                        <TreeView.ItemTemplate>
+                                            <HierarchicalDataTemplate DataType="{x:Type local:TreeModel}" ItemsSource="{Binding Children}">
+                                                <StackPanel Orientation="Horizontal" x:Name="staTree">
+                                                    <CheckBox ToolTip="{Binding ToolTip}" FontSize="12" Tag="{Binding Children}" IsChecked="{Binding IsChecked, Mode=TwoWay}">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Image VerticalAlignment="Center" Source="{Binding Icon}" Width="16" Height="16"></Image>
+                                                            <TextBlock Text="{Binding Name}" FontSize="12"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                </StackPanel>
+                                                <HierarchicalDataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsChecked}" Value="true">
+                                                        <Setter TargetName="staTree" Property="Background" Value="White"/>
+                                                    </DataTrigger>
+                                                </HierarchicalDataTemplate.Triggers>
+                                            </HierarchicalDataTemplate>
+                                        </TreeView.ItemTemplate>
+                                    </TreeView>
+                                </Grid>
+                                <Grid  Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Button x:Name="btnAddUser" Grid.Row="0" Grid.Column="1" Content="{Binding user_AddUser}" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnAddUser_Click"/>
+                                    <Button x:Name="btnUpdateUser" Grid.Row="1" Grid.Column="1" Content="{Binding user_UpdateUser}" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnUpdateUser_Click"/>
+                                    <Button x:Name="btnDeleteUser" Grid.Row="2" Grid.Column="1" Content="{Binding user_DeleteUser}" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="75" Height="30" Click="btnDeleteUser_Click"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="{Binding group_UserGroup}" Name="tiUserGroup"  Background="Transparent" Loaded="tiUserGroup_Loaded">
+                        <Grid >
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="196"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="180"></RowDefinition>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <ListBox x:Name="lbRoleList"  Grid.Row="0" Background="Transparent" SelectionChanged="lbRoleList_SelectionChanged">
+                                    <ListBox.Resources>
+                                        <Style TargetType="ListBox">
+                                            <Setter Property="ItemContainerStyle">
+                                                <Setter.Value>
+                                                    <Style TargetType="ListBoxItem">
+                                                        <Style.Triggers>
+                                                            <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                                                                <Setter Property="Foreground" Value="Blue"/>
+                                                                <Setter Property="FontSize" Value="17"/>
+                                                            </Trigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListBox.Resources>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=AliasName}"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Button x:Name="btnAddGroup" Grid.Row="0" Content="{Binding user_AddUser}" Height="30" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Click="btnAddGroup_Click"></Button>
+                                    <Button x:Name="btnDeleteGroup" Grid.Row="1" Content="{Binding user_DeleteUser}" Height="30" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Click="btnDeleteGroup_Click"></Button>
+                                    <Button x:Name="btnUpdateGroup" Grid.Row="2" Content="{Binding user_UpdateUser}" Height="30" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="75" Click="btnUpdateGroup_Click"></Button>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="20"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox x:Name="ckbSetRolePrivilege" Grid.Column="1" IsChecked="{Binding SetRolePrivilege, Mode=TwoWay}" Content="手动设置" Click="ckbSetRolePrivilege_Click"/>
+                                </Grid>
+                                <DockPanel Grid.Row="1">
+                                    <TreeView x:Name="FuncListTreeView" Width="395" Background="Transparent" HorizontalAlignment="Left" MouseRightButtonDown="FuncListTreeView_MouseRightButtonDown" VirtualizingStackPanel.IsVirtualizing="False">
+                                        <TreeView.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Name="menuExpandAll" Header="全部展开" Click="menuExpandAll_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="../Icon/apply.png" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Name="menuUnExpandAll" Header="全部折叠" Click="menuUnExpandAll_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="../Icon/apply.png" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Name="menuSelectAll" Header="全部选中" Click="menuSelectAll_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="../Icon/apply.png" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Name="menuUnSelectAll" Header="全部取消" Click="menuUnSelectAll_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="../Icon/apply.png" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Name="menuAddFirstMenu" Header="添加第一节点" IsEnabled="False" Click="menuAddFirstMenu_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="../Icon/apply.png" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Name="menuRefresh" Header="刷新" Click="menuRefresh_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="../Icon/apply.png"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                            </ContextMenu>
+                                        </TreeView.ContextMenu>
+                                        <TreeView.ItemTemplate>
+                                            <HierarchicalDataTemplate DataType="{x:Type local:TreeModel}" ItemsSource="{Binding Children}">
+                                                <StackPanel Orientation="Horizontal" x:Name="staTree">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"></ColumnDefinition>
+                                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <!--<CheckBox ToolTip="{Binding ToolTip}" FontSize="14" Tag="{Binding Children}" IsChecked="{Binding IsChecked, Mode=TwoWay}" Grid.Column="0">-->
+                                                        <StackPanel Orientation="Horizontal" Grid.Column="0" ToolTip="{Binding ToolTip}" Tag="{Binding Children}">
+                                                            <Image VerticalAlignment="Center" Source="../Icon/kcmdf.png"></Image>
+                                                            <TextBlock Text="{Binding Name}" FontSize="12" VerticalAlignment="Center" Foreground="Black"></TextBlock>
+                                                        </StackPanel>
+                                                        <!--</CheckBox>-->
+                                                        <CheckBox FontSize="12" Grid.Column="1" IsChecked="{Binding IsChecked, Mode=TwoWay}">
+                                                            <TextBlock Text="可显示" FontSize="12" VerticalAlignment="Center" Foreground="Black"></TextBlock>
+                                                        </CheckBox>
+                                                        <CheckBox FontSize="12" Grid.Column="2" IsChecked="{Binding IsWrite, Mode=TwoWay}">
+                                                            <TextBlock Text="可操作" FontSize="12" VerticalAlignment="Center" Foreground="Black"></TextBlock>
+                                                        </CheckBox>
+
+                                                        <Grid.ContextMenu>
+                                                            <ContextMenu>
+                                                                <MenuItem Name="menuDelItemInSelect" Header="删除节点" Click="menuDelItemInSelect_Click" IsEnabled="False">
+                                                                    <!--<MenuItem.Icon>
+                                                                        <Image Source="../Icon/apply.png" />
+                                                                    </MenuItem.Icon>-->
+                                                                </MenuItem>
+                                                                <MenuItem Name="menuAddItemInSelect" Header="增加节点" Click="menuAddItemInSelect_Click">
+                                                                    <!--<MenuItem.Icon>
+                                                                        <Image Source="../Icon/apply.png" />
+                                                                    </MenuItem.Icon>-->
+                                                                </MenuItem>
+                                                            </ContextMenu>
+                                                        </Grid.ContextMenu>
+                                                    </Grid>
+                                                </StackPanel>
+                                                <HierarchicalDataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding IsChecked}" Value="true">
+                                                        <Setter TargetName="staTree" Property="Background" Value="White"/>
+                                                    </DataTrigger>
+                                                </HierarchicalDataTemplate.Triggers>
+                                            </HierarchicalDataTemplate>
+                                        </TreeView.ItemTemplate>
+                                    </TreeView>
+                                </DockPanel>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnClose" Content="退出" Grid.Column="1" Background="Transparent" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="75" Click="btnClose_Click"></Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
